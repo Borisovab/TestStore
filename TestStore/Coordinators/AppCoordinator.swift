@@ -15,7 +15,7 @@ class AppCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = SignInPageViewController.creatVC(viewController: SignInPageViewController(), title: "HELLO!")
+        let vc = SignInPageViewController.creatVC(viewController: SignInPageViewController(), title: "")
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
