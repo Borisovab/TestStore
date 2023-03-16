@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SignInPageViewController: UIViewController, Adapter {
+
+    weak var coordinator: AppCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .tintColor
     }
 
 
