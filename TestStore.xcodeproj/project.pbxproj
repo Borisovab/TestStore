@@ -16,6 +16,14 @@
 		0042481229C3872E00096292 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042481129C3872E00096292 /* AppCoordinator.swift */; };
 		0042481429C3874100096292 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042481329C3874100096292 /* Coordinator.swift */; };
 		0042481D29C38B6A00096292 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042481C29C38B6A00096292 /* Adapter.swift */; };
+		0042481F29C3942D00096292 /* SignInPageVC+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042481E29C3942D00096292 /* SignInPageVC+Constraints.swift */; };
+		0042482229C3B45700096292 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042482129C3B45700096292 /* LoginViewController.swift */; };
+		0042482529C3B4CB00096292 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042482429C3B4CB00096292 /* HomeViewController.swift */; };
+		0042482829C3B50E00096292 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042482729C3B50E00096292 /* ProfileViewController.swift */; };
+		0042482B29C3B5F200096292 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042482A29C3B5F200096292 /* LikeViewController.swift */; };
+		0042482E29C3B66900096292 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042482D29C3B66900096292 /* BasketViewController.swift */; };
+		0042483129C3B69600096292 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042483029C3B69600096292 /* ChatViewController.swift */; };
+		0042483429C3B7B100096292 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042483329C3B7B100096292 /* TabBarController.swift */; };
 		3EB483564BD9C0AC1FDDB218 /* Pods_TestStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B201D688A7F0AEEB38C9821C /* Pods_TestStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +39,14 @@
 		0042481129C3872E00096292 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0042481329C3874100096292 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0042481C29C38B6A00096292 /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
+		0042481E29C3942D00096292 /* SignInPageVC+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInPageVC+Constraints.swift"; sourceTree = "<group>"; };
+		0042482129C3B45700096292 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0042482429C3B4CB00096292 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0042482729C3B50E00096292 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0042482A29C3B5F200096292 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
+		0042482D29C3B66900096292 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		0042483029C3B69600096292 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0042483329C3B7B100096292 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		61D5FC3269DF5F5D4887A3C5 /* Pods-TestStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestStore.debug.xcconfig"; path = "Target Support Files/Pods-TestStore/Pods-TestStore.debug.xcconfig"; sourceTree = "<group>"; };
 		8E992A35766827659553F18E /* Pods-TestStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestStore.release.xcconfig"; path = "Target Support Files/Pods-TestStore/Pods-TestStore.release.xcconfig"; sourceTree = "<group>"; };
 		B201D688A7F0AEEB38C9821C /* Pods_TestStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +117,13 @@
 			isa = PBXGroup;
 			children = (
 				0042481B29C388B800096292 /* SignInPageVC */,
+				0042482029C3B43B00096292 /* LoginVC */,
+				0042482329C3B4BA00096292 /* HomeVC */,
+				0042482929C3B5D400096292 /* LikeVC */,
+				0042482C29C3B64100096292 /* BasketVC */,
+				0042482F29C3B67B00096292 /* ChatVC */,
+				0042482629C3B4FF00096292 /* ProfileVC */,
+				0042483229C3B77D00096292 /* TabBarController */,
 				0042481A29C3883200096292 /* Protocols */,
 				0042481929C387F600096292 /* Storyboards */,
 			);
@@ -151,8 +174,65 @@
 			isa = PBXGroup;
 			children = (
 				004247FC29C37F8200096292 /* SignInPageViewController.swift */,
+				0042481E29C3942D00096292 /* SignInPageVC+Constraints.swift */,
 			);
 			path = SignInPageVC;
+			sourceTree = "<group>";
+		};
+		0042482029C3B43B00096292 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				0042482129C3B45700096292 /* LoginViewController.swift */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		0042482329C3B4BA00096292 /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				0042482429C3B4CB00096292 /* HomeViewController.swift */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		0042482629C3B4FF00096292 /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				0042482729C3B50E00096292 /* ProfileViewController.swift */,
+			);
+			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		0042482929C3B5D400096292 /* LikeVC */ = {
+			isa = PBXGroup;
+			children = (
+				0042482A29C3B5F200096292 /* LikeViewController.swift */,
+			);
+			path = LikeVC;
+			sourceTree = "<group>";
+		};
+		0042482C29C3B64100096292 /* BasketVC */ = {
+			isa = PBXGroup;
+			children = (
+				0042482D29C3B66900096292 /* BasketViewController.swift */,
+			);
+			path = BasketVC;
+			sourceTree = "<group>";
+		};
+		0042482F29C3B67B00096292 /* ChatVC */ = {
+			isa = PBXGroup;
+			children = (
+				0042483029C3B69600096292 /* ChatViewController.swift */,
+			);
+			path = ChatVC;
+			sourceTree = "<group>";
+		};
+		0042483229C3B77D00096292 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				0042483329C3B7B100096292 /* TabBarController.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		3DCDAEDD7DB79AE1A2F48CDD /* Frameworks */ = {
@@ -287,11 +367,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0042481F29C3942D00096292 /* SignInPageVC+Constraints.swift in Sources */,
 				004247FD29C37F8200096292 /* SignInPageViewController.swift in Sources */,
+				0042482829C3B50E00096292 /* ProfileViewController.swift in Sources */,
 				0042481D29C38B6A00096292 /* Adapter.swift in Sources */,
 				004247F929C37F8200096292 /* AppDelegate.swift in Sources */,
+				0042482229C3B45700096292 /* LoginViewController.swift in Sources */,
+				0042482E29C3B66900096292 /* BasketViewController.swift in Sources */,
+				0042482529C3B4CB00096292 /* HomeViewController.swift in Sources */,
 				0042481429C3874100096292 /* Coordinator.swift in Sources */,
+				0042483129C3B69600096292 /* ChatViewController.swift in Sources */,
 				0042481229C3872E00096292 /* AppCoordinator.swift in Sources */,
+				0042483429C3B7B100096292 /* TabBarController.swift in Sources */,
+				0042482B29C3B5F200096292 /* LikeViewController.swift in Sources */,
 				0042480329C37F8200096292 /* TestStore.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
