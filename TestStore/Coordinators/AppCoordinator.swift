@@ -19,4 +19,11 @@ class AppCoordinator: Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
+
+    func showTabBar() {
+        let tbc = TabBarController.generateTabBar(tabBarController: TabBarController())
+        tbc.coordinator = self
+        navigationController.viewControllers.removeAll()
+        navigationController.pushViewController(tbc, animated: true)
+    }
 }

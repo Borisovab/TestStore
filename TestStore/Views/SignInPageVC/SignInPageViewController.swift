@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInPageViewController: UIViewController, Adapter {
+class SignInPageViewController: UIViewController, AdapterViewController {
 
     weak var coordinator: AppCoordinator?
 
@@ -27,7 +27,7 @@ class SignInPageViewController: UIViewController, Adapter {
         stack.alignment = .fill
         stack.distribution = .fillEqually
 
-        [firstNameTF, lastNameTF, emailTF, SignInButton].forEach{ stack.addArrangedSubview($0) }
+        [firstNameTF, lastNameTF, emailTF, signInButton].forEach{ stack.addArrangedSubview($0) }
         return stack
     }()
 
@@ -61,7 +61,7 @@ class SignInPageViewController: UIViewController, Adapter {
         return textField
     }()
 
-    var SignInButton: UIButton = {
+    var signInButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign in", for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.314901948, green: 0.3299148679, blue: 0.8127909303, alpha: 1)
@@ -132,7 +132,8 @@ class SignInPageViewController: UIViewController, Adapter {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9821448922, green: 0.9722177386, blue: 0.9982008338, alpha: 1)
         setupConstraints()
-
+        
+        signInButtonPressed()
     }
 
 
