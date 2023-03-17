@@ -8,5 +8,11 @@
 import UIKit
 
 extension SignInPageViewController {
-    
+    func logInButtonPressed() {
+        logInButton.addTarget(self, action: #selector(logInButtonAction), for: .touchUpInside)
+    }
+
+    @objc func logInButtonAction() {
+        coordinator?.showLoginVC()
+    }
 }

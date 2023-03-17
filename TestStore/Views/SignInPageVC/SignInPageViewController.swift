@@ -134,6 +134,7 @@ class SignInPageViewController: UIViewController, AdapterViewController {
         setupConstraints()
         
         signInButtonPressed()
+        logInButtonPressed()
     }
 
 

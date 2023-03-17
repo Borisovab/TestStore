@@ -26,4 +26,10 @@ class AppCoordinator: Coordinator {
         navigationController.viewControllers.removeAll()
         navigationController.pushViewController(tbc, animated: true)
     }
+
+    func showLoginVC() {
+        let vc = LoginViewController.creatVC(viewController: LoginViewController(), title: "Login VC")
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
 }
