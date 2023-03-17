@@ -30,6 +30,8 @@
 		0042483E29C4449600096292 /* SignInPageVC+SignInButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042483D29C4449600096292 /* SignInPageVC+SignInButtonAction.swift */; };
 		0042484029C4543C00096292 /* LoginVC+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042483F29C4543C00096292 /* LoginVC+Constraints.swift */; };
 		0042484329C45A7C00096292 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042484229C45A7C00096292 /* CoreDataManager.swift */; };
+		0042484729C45F0E00096292 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042484529C45F0E00096292 /* UserData+CoreDataProperties.swift */; };
+		0042484829C45F0E00096292 /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042484629C45F0E00096292 /* UserData+CoreDataClass.swift */; };
 		3EB483564BD9C0AC1FDDB218 /* Pods_TestStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B201D688A7F0AEEB38C9821C /* Pods_TestStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		0042483D29C4449600096292 /* SignInPageVC+SignInButtonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInPageVC+SignInButtonAction.swift"; sourceTree = "<group>"; };
 		0042483F29C4543C00096292 /* LoginVC+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC+Constraints.swift"; sourceTree = "<group>"; };
 		0042484229C45A7C00096292 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0042484529C45F0E00096292 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0042484629C45F0E00096292 /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		61D5FC3269DF5F5D4887A3C5 /* Pods-TestStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestStore.debug.xcconfig"; path = "Target Support Files/Pods-TestStore/Pods-TestStore.debug.xcconfig"; sourceTree = "<group>"; };
 		8E992A35766827659553F18E /* Pods-TestStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestStore.release.xcconfig"; path = "Target Support Files/Pods-TestStore/Pods-TestStore.release.xcconfig"; sourceTree = "<group>"; };
 		B201D688A7F0AEEB38C9821C /* Pods_TestStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +101,7 @@
 		004247F729C37F8200096292 /* TestStore */ = {
 			isa = PBXGroup;
 			children = (
+				0042484429C45EBE00096292 /* Entity */,
 				0042484129C459C900096292 /* CoreDataManager */,
 				0042480F29C386F600096292 /* Coordinators */,
 				0042481729C3877800096292 /* Models */,
@@ -105,7 +110,6 @@
 				0042481829C387AE00096292 /* SupportingFiles */,
 				0042483529C4426F00096292 /* Helper */,
 				0042480929C37F8300096292 /* Info.plist */,
-				0042480129C37F8200096292 /* TestStore.xcdatamodeld */,
 			);
 			path = TestStore;
 			sourceTree = "<group>";
@@ -273,8 +277,18 @@
 			isa = PBXGroup;
 			children = (
 				0042484229C45A7C00096292 /* CoreDataManager.swift */,
+				0042480129C37F8200096292 /* TestStore.xcdatamodeld */,
 			);
 			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		0042484429C45EBE00096292 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0042484629C45F0E00096292 /* UserData+CoreDataClass.swift */,
+				0042484529C45F0E00096292 /* UserData+CoreDataProperties.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		3DCDAEDD7DB79AE1A2F48CDD /* Frameworks */ = {
@@ -411,10 +425,12 @@
 			files = (
 				0042481F29C3942D00096292 /* SignInPageVC+Constraints.swift in Sources */,
 				004247FD29C37F8200096292 /* SignInPageViewController.swift in Sources */,
+				0042484829C45F0E00096292 /* UserData+CoreDataClass.swift in Sources */,
 				0042482829C3B50E00096292 /* ProfileViewController.swift in Sources */,
 				0042481D29C38B6A00096292 /* AdapterViewController.swift in Sources */,
 				0042484029C4543C00096292 /* LoginVC+Constraints.swift in Sources */,
 				0042483C29C4445600096292 /* SignInPageVC+LoginButtonAction.swift in Sources */,
+				0042484729C45F0E00096292 /* UserData+CoreDataProperties.swift in Sources */,
 				004247F929C37F8200096292 /* AppDelegate.swift in Sources */,
 				0042482229C3B45700096292 /* LoginViewController.swift in Sources */,
 				0042482E29C3B66900096292 /* BasketViewController.swift in Sources */,
