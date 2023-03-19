@@ -23,7 +23,7 @@ extension LoginViewController {
             coordinator?.isLoggedIn = viewModel.isLoggedIn
             coordinator?.showTabBar()
         } else {
-            errorAlert()
+            UtilityFunction().simpleAlert(vc: self, title: "Ошибка", message: "Неверно введены логин и/или пароль")
         }
 
 
