@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 class SignInPageViewController: UIViewController, AdapterViewController {
 
     weak var coordinator: AppCoordinator?
+    var viewModel: SignInViewModel?
+
+    var fetchResultController = CoreDataManager.instance.fetchResultController(entityName: "UserData", sortName: "firstName")
+
 
     var signInLabel: UILabel = {
         let label = UILabel()
@@ -78,7 +83,7 @@ class SignInPageViewController: UIViewController, AdapterViewController {
         stack.alignment = .fill
         stack.distribution = .fill
 
-        [alreadyHaveLabel, logInButton].forEach{ stack.addArrangedSubview($0) }
+        [alreadyHaveLabel, logButton].forEach{ stack.addArrangedSubview($0) }
         return stack
     }()
 
@@ -90,7 +95,7 @@ class SignInPageViewController: UIViewController, AdapterViewController {
         return label
     }()
 
-    var logInButton: UIButton = {
+    var logButton: UIButton = {
         let button = UIButton()
         button.setTitle("Log in", for: .normal)
         button.setTitleColor(UIColor.systemIndigo, for: .normal)
@@ -134,8 +139,37 @@ class SignInPageViewController: UIViewController, AdapterViewController {
         setupConstraints()
         
         signInButtonPressed()
-        logInButtonPressed()
+        logButtonPressed()
+
+
+        let fetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
+
+        do {
+            let results = try CoreDataManager.instance.context.fetch(fetchResult)
+
+            for result in results as! [UserData] {
+                print("firstName = \(result.firstName!), lastName = \(result.lastName!), email = \(result.email!)")
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+
+
+        //MARK: временный блок для очистки памяти
+        //        do {
+        //            let results = try CoreDataManager.instance.context.fetch(fetchResult)
+        //            for result in results as! [UserData] {
+        //                CoreDataManager.instance.context.delete(result)
+        //            }
+        //        } catch let error as NSError {
+        //            print(error.localizedDescription)
+        //        }
+        //        CoreDataManager.instance.saveContext()
+
+
     }
+
+
 
 
 }
