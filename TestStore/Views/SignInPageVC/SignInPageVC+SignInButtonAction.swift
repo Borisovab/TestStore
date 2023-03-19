@@ -13,6 +13,8 @@ extension SignInPageViewController {
     }
 
     @objc func signInButtonAction() {
-        coordinator?.showTabBar()
+        if saveUserData() {
+            coordinator?.showTabBar()
+        }
     }
 }

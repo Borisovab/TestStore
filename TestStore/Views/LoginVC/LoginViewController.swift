@@ -10,6 +10,7 @@ import UIKit
 class LoginViewController: UIViewController, AdapterViewController {
 
     weak var coordinator: AppCoordinator?
+    var viewModel: LoginViewModel?
 
     var greetingsLabel: UILabel = {
         let label = UILabel()
@@ -43,7 +44,6 @@ class LoginViewController: UIViewController, AdapterViewController {
     var eyeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-//        button.alpha = 0.5
         return button
     }()
 
@@ -59,7 +59,13 @@ class LoginViewController: UIViewController, AdapterViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         setupConstraints()
+        eyeButtonPressed()
+        
+        logInButtonPressed()
     }
+
+
+    
 
 
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
+    var isLoggedIn: Bool = false
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -17,6 +18,7 @@ class AppCoordinator: Coordinator {
     func start() {
         let vc = SignInPageViewController.creatVC(viewController: SignInPageViewController(), title: "")
         vc.coordinator = self
+        vc.viewModel = SignInViewModel()
         navigationController.pushViewController(vc, animated: true)
     }
 
@@ -30,6 +32,8 @@ class AppCoordinator: Coordinator {
     func showLoginVC() {
         let vc = LoginViewController.creatVC(viewController: LoginViewController(), title: "Login VC")
         vc.coordinator = self
+        vc.viewModel = LoginViewModel()
+        vc.viewModel?.isLoggedIn = isLoggedIn
         navigationController.pushViewController(vc, animated: true)
     }
 }
