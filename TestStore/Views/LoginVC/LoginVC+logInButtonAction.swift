@@ -17,13 +17,13 @@ extension LoginViewController {
         guard let viewModel = viewModel
         else { return }
 
-        viewModel.userPressedLogInButton(login: (loginTF.text ?? ""), password: (passwordTF.text ?? ""))
+        viewModel.userPressedLogInButton(login: (loginTF.text ?? ""))
 
         if viewModel.isLoggedIn {
             coordinator?.isLoggedIn = viewModel.isLoggedIn
             coordinator?.showTabBar()
         } else {
-            UtilityFunction().simpleAlert(vc: self, title: "Ошибка", message: "Неверно введены логин и/или пароль")
+            UtilityFunction().simpleAlert(vc: self, title: "Ошибка", message: "Неверно введен логин")
         }
 
 

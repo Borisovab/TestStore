@@ -142,6 +142,7 @@ class SignInPageViewController: UIViewController, AdapterViewController {
         logButtonPressed()
 
 
+
         let fetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
 
         do {
@@ -149,22 +150,25 @@ class SignInPageViewController: UIViewController, AdapterViewController {
 
             for result in results as! [UserData] {
                 print("firstName = \(result.firstName!), lastName = \(result.lastName!), email = \(result.email!)")
+
             }
         } catch let error as NSError {
             print(error.localizedDescription)
         }
 
 
+
+
         //MARK: временный блок для очистки памяти
-        //        do {
-        //            let results = try CoreDataManager.instance.context.fetch(fetchResult)
-        //            for result in results as! [UserData] {
-        //                CoreDataManager.instance.context.delete(result)
-        //            }
-        //        } catch let error as NSError {
-        //            print(error.localizedDescription)
-        //        }
-        //        CoreDataManager.instance.saveContext()
+//                do {
+//                    let results = try CoreDataManager.instance.context.fetch(fetchResult)
+//                    for result in results as! [UserData] {
+//                        CoreDataManager.instance.context.delete(result)
+//                    }
+//                } catch let error as NSError {
+//                    print(error.localizedDescription)
+//                }
+//                CoreDataManager.instance.saveContext()
 
 
     }

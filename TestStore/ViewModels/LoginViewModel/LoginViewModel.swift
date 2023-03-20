@@ -12,7 +12,7 @@ class LoginViewModel {
     var isLoggedIn = false
     var user: UserData?
 
-    func userPressedLogInButton(login: String, password: String) {
+    func userPressedLogInButton(login: String) {
 
         let fetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
 
@@ -21,9 +21,8 @@ class LoginViewModel {
             for result in results as! [UserData] {
 
                 let log = result.firstName
-                let pass = result.email
 
-                if login != log || password != pass {
+                if login != log {
                     isLoggedIn = false
                 } else {
                     isLoggedIn = true
