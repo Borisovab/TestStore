@@ -2,7 +2,7 @@
 //  UserData+CoreDataProperties.swift
 //  
 //
-//  Created by Александр Борисов on 17.03.2023.
+//  Created by Александр Борисов on 19.03.2023.
 //
 //
 
@@ -16,8 +16,9 @@ extension UserData {
         return NSFetchRequest<UserData>(entityName: "UserData")
     }
 
-    @NSManaged public var firstName: String?
-    @NSManaged public var lastName: String?
     @NSManaged public var email: String?
+    @NSManaged public var firstName: String?
+    @NSManaged public var id: Int16
+    @NSManaged public var lastName: String?
 
 }

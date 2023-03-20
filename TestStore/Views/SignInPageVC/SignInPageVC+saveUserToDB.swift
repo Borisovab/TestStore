@@ -51,10 +51,13 @@ extension SignInPageViewController {
                             if flag == false {
                                 UtilityFunction().simpleAlert(vc: self, title: "Ошибка", message: "Указанный email уже зарегистрирован ранее.")
                             } else {
+
                                 userData.firstName = firstNameTF.text
                                 userData.lastName = lastNameTF.text
                                 userData.email = emailTF.text
                                 CoreDataManager.instance.saveContext()
+
+
                             }
 
                         } catch let error as NSError {
@@ -66,12 +69,7 @@ extension SignInPageViewController {
             }
         }
 
-
-
-
-
-
-//        return true
         return flag
     }
+
 }
