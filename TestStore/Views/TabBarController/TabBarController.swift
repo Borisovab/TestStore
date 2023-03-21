@@ -13,25 +13,22 @@ class TabBarController: UITabBarController, AdapterTabBarControllers {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTabBar()
+
         setTabBarAppearence()
+        
+        DispatchQueue.main.async {
+            self.setupTabBar()
+        }
     }
 
     private func setupTabBar() {
-        viewControllers = [
-            genegateVC(viewController: HomeViewController(), title: "", image: UIImage(systemName: "house")),
-            genegateVC(viewController: LikeViewController(), title: "", image: UIImage(systemName: "heart")),
-            genegateVC(viewController: BasketViewController(), title: "", image: UIImage(systemName: "cart")),
-            genegateVC(viewController: ChatViewController(), title: "", image: UIImage(systemName: "bubble.left")),
-            genegateVC(viewController: ProfileViewController(), title: "Profile", image: UIImage(systemName: "person"))
-        ]
+        guard let coordinator = coordinator else {
+            print("error setupTabBar")
+            return
+        }
+        viewControllers = coordinator.creatVCForTabBar()
     }
 
-    private func genegateVC(viewController: UIViewController, title: String, image: UIImage?) -> UIViewController {
-        viewController.tabBarItem.title = title
-        viewController.tabBarItem.image = image
-        return viewController
-    }
 
     private func setTabBarAppearence() {
         let positionOnX: CGFloat = 10
