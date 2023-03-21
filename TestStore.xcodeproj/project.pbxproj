@@ -39,6 +39,11 @@
 		0042485F29C7553500096292 /* UtilityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042485E29C7553500096292 /* UtilityFunction.swift */; };
 		00786A2729C785240027983A /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2529C785240027983A /* UserData+CoreDataProperties.swift */; };
 		00786A2829C785240027983A /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2629C785240027983A /* UserData+CoreDataClass.swift */; };
+		00786A2B29C875C40027983A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2A29C875C40027983A /* ProfileViewModel.swift */; };
+		00786A2D29C87E220027983A /* AdapterVCInsideTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2C29C87E220027983A /* AdapterVCInsideTabBar.swift */; };
+		00B3C32629C898620071F00F /* ProfileVC+setNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3C32529C898620071F00F /* ProfileVC+setNavBar.swift */; };
+		00B3C32829C898900071F00F /* ProfileVC+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3C32729C898900071F00F /* ProfileVC+Constraints.swift */; };
+		00B3C32B29C8B5350071F00F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3C32A29C8B5350071F00F /* ProfileTableViewCell.swift */; };
 		3EB483564BD9C0AC1FDDB218 /* Pods_TestStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B201D688A7F0AEEB38C9821C /* Pods_TestStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +82,11 @@
 		0042485E29C7553500096292 /* UtilityFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunction.swift; sourceTree = "<group>"; };
 		00786A2529C785240027983A /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		00786A2629C785240027983A /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		00786A2A29C875C40027983A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		00786A2C29C87E220027983A /* AdapterVCInsideTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterVCInsideTabBar.swift; sourceTree = "<group>"; };
+		00B3C32529C898620071F00F /* ProfileVC+setNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC+setNavBar.swift"; sourceTree = "<group>"; };
+		00B3C32729C898900071F00F /* ProfileVC+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC+Constraints.swift"; sourceTree = "<group>"; };
+		00B3C32A29C8B5350071F00F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		61D5FC3269DF5F5D4887A3C5 /* Pods-TestStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestStore.debug.xcconfig"; path = "Target Support Files/Pods-TestStore/Pods-TestStore.debug.xcconfig"; sourceTree = "<group>"; };
 		8E992A35766827659553F18E /* Pods-TestStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestStore.release.xcconfig"; path = "Target Support Files/Pods-TestStore/Pods-TestStore.release.xcconfig"; sourceTree = "<group>"; };
 		B201D688A7F0AEEB38C9821C /* Pods_TestStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +175,7 @@
 		0042481629C3876C00096292 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				00786A2929C875B30027983A /* ProfileViewModel */,
 				0042485229C48F4C00096292 /* LoginViewModel */,
 				0042484929C4890E00096292 /* SignInViewModel */,
 			);
@@ -201,6 +212,7 @@
 			children = (
 				0042481C29C38B6A00096292 /* AdapterViewController.swift */,
 				0042483929C4434B00096292 /* AdapterTabBarController.swift */,
+				00786A2C29C87E220027983A /* AdapterVCInsideTabBar.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -239,7 +251,10 @@
 		0042482629C3B4FF00096292 /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				00B3C32929C8B4E40071F00F /* Cell */,
 				0042482729C3B50E00096292 /* ProfileViewController.swift */,
+				00B3C32529C898620071F00F /* ProfileVC+setNavBar.swift */,
+				00B3C32729C898900071F00F /* ProfileVC+Constraints.swift */,
 			);
 			path = ProfileVC;
 			sourceTree = "<group>";
@@ -350,6 +365,22 @@
 				0042485E29C7553500096292 /* UtilityFunction.swift */,
 			);
 			path = UtilityFunction;
+			sourceTree = "<group>";
+		};
+		00786A2929C875B30027983A /* ProfileViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				00786A2A29C875C40027983A /* ProfileViewModel.swift */,
+			);
+			path = ProfileViewModel;
+			sourceTree = "<group>";
+		};
+		00B3C32929C8B4E40071F00F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				00B3C32A29C8B5350071F00F /* ProfileTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		3DCDAEDD7DB79AE1A2F48CDD /* Frameworks */ = {
@@ -495,10 +526,12 @@
 				0042485129C48F3800096292 /* LoginVC+logInButtonAction.swift in Sources */,
 				0042481D29C38B6A00096292 /* AdapterViewController.swift in Sources */,
 				0042485429C48F6000096292 /* LoginViewModel.swift in Sources */,
+				00B3C32B29C8B5350071F00F /* ProfileTableViewCell.swift in Sources */,
 				0042484029C4543C00096292 /* LoginVC+Constraints.swift in Sources */,
 				0042483C29C4445600096292 /* SignInPageVC+LoginButtonAction.swift in Sources */,
 				004247F929C37F8200096292 /* AppDelegate.swift in Sources */,
 				0042482229C3B45700096292 /* LoginViewController.swift in Sources */,
+				00B3C32629C898620071F00F /* ProfileVC+setNavBar.swift in Sources */,
 				0042482E29C3B66900096292 /* BasketViewController.swift in Sources */,
 				0042482529C3B4CB00096292 /* HomeViewController.swift in Sources */,
 				0042481429C3874100096292 /* Coordinator.swift in Sources */,
@@ -506,11 +539,14 @@
 				0042483129C3B69600096292 /* ChatViewController.swift in Sources */,
 				0042481229C3872E00096292 /* AppCoordinator.swift in Sources */,
 				0042485F29C7553500096292 /* UtilityFunction.swift in Sources */,
+				00B3C32829C898900071F00F /* ProfileVC+Constraints.swift in Sources */,
 				0042483429C3B7B100096292 /* TabBarController.swift in Sources */,
 				0042483829C442BE00096292 /* UIColor+extension.swift in Sources */,
+				00786A2B29C875C40027983A /* ProfileViewModel.swift in Sources */,
 				0042483E29C4449600096292 /* SignInPageVC+SignInButtonAction.swift in Sources */,
 				0042485C29C754F400096292 /* String+extension.swift in Sources */,
 				0042482B29C3B5F200096292 /* LikeViewController.swift in Sources */,
+				00786A2D29C87E220027983A /* AdapterVCInsideTabBar.swift in Sources */,
 				0042484329C45A7C00096292 /* CoreDataManager.swift in Sources */,
 				0042480329C37F8200096292 /* TestStore.xcdatamodeld in Sources */,
 			);

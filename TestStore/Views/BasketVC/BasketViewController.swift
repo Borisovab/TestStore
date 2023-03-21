@@ -7,7 +7,9 @@
 
 import UIKit
 
-class BasketViewController: UIViewController {
+class BasketViewController: UIViewController, AdapterVCInsideTabBar {
+
+    weak var coordinator: AppCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
