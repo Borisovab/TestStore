@@ -47,22 +47,35 @@ class AppCoordinator: Coordinator {
 
 
     func creatVCForTabBar() -> [UIViewController] {
-        let vc1 = HomeViewController.genegateVC(viewController: HomeViewController(), image: UIImage(named: "home"))
-        let vc2 = LikeViewController.genegateVC(viewController: LikeViewController(), image: UIImage(named: "heart"))
-        let vc3 = BasketViewController.genegateVC(viewController: BasketViewController(), image: UIImage(named: "cart"))
-        let vc4 = ChatViewController.genegateVC(viewController: ChatViewController(), image: UIImage(named: "chat"))
-        let vc5 = ProfileViewController.genegateVC(viewController: ProfileViewController(), image: UIImage(named: "profile"))
-
+        let vc1 = Page1ViewController.genegateVC(viewController: Page1ViewController(), image: UIImage(named: "home"))
         vc1.coordinator = self
+
+        let vc2 = LikeViewController.genegateVC(viewController: LikeViewController(), image: UIImage(named: "heart"))
         vc2.coordinator = self
+
+        let vc3 = BasketViewController.genegateVC(viewController: BasketViewController(), image: UIImage(named: "cart"))
         vc3.coordinator = self
+
+        let vc4 = ChatViewController.genegateVC(viewController: ChatViewController(), image: UIImage(named: "chat"))
         vc4.coordinator = self
+
+        let vc5 = ProfileViewController.genegateVC(viewController: ProfileViewController(), image: UIImage(named: "profile"))
         vc5.coordinator = self
-
         let array = [vc1, vc2, vc3, vc4, vc5]
-
         return array
     }
+
+//    func navBarForPage1() {
+//        print("start navBarForPage1")
+//        let vc1 = Page1ViewController()
+//        let navItem = UINavigationItem(title: "Trade by dara")
+//        let leftButton = UIBarButtonItem(image: UIImage(named: "back"), landscapeImagePhone: nil, style: .plain, target: nil, action: #selector(qqqq))
+//        navItem.leftBarButtonItem = leftButton
+//        vc1.coordinator?.navigationController.navigationBar.setItems([navItem], animated: true)
+//    }
+//    @objc func qqqq() {
+//        print("finished navBarForPage1")
+//    }
 
 
 }

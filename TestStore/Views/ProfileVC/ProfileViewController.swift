@@ -17,7 +17,7 @@ class ProfileViewController: UIViewController, AdapterVCInsideTabBar {
     var avatar: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .lightGray
-        image.image = UIImage(systemName: "heart")
+        image.image = UIImage(named: "avatar")
         return image
     }()
 
