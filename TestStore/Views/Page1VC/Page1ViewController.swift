@@ -23,6 +23,7 @@ class Page1ViewController: UIViewController, AdapterVCInsideTabBar {
         searchBar.sizeToFit()
         searchBar.isTranslucent = true
         searchBar.backgroundImage = UIImage()
+
         return searchBar
     }()
 
@@ -34,6 +35,7 @@ class Page1ViewController: UIViewController, AdapterVCInsideTabBar {
         tableView.register(LatestTableViewCell.self, forCellReuseIdentifier: latestTableViewCellReuseIdentifier)
         tableView.register(FlashSaleTableViewCell.self, forCellReuseIdentifier: flashSaleTableViewCellReuseIdentifier)
         tableView.register(BrandsTableViewCell.self, forCellReuseIdentifier: brandsTableViewCellReuseIdentifier)
+
         return tableView
     }()
 
@@ -42,7 +44,6 @@ class Page1ViewController: UIViewController, AdapterVCInsideTabBar {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9860665202, green: 0.9761391282, blue: 1, alpha: 1)
-        setNavBar()
         setupConstraints()
 
     }
@@ -55,29 +56,9 @@ extension Page1ViewController: UITableViewDataSource {
         return 4
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0: return "Test"
-        case 1: return "Latest"
-        case 2: return "Flash Sale"
-        case 3: return "Brands"
-        default: return ""
-        }
-    }
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
-//        let category = categoryViewModel?.model?.categoryArray
-//        guard let category = category else { return 1 }
-//
-//        switch section {
-//        case 0: return category.count
-//        case 1: return 1
-//        case 2: return 1
-//        case 3: return 1
-//        default: return 1
-//        }
     }
 
 
@@ -119,6 +100,46 @@ extension Page1ViewController: UITableViewDataSource {
 }
 
 extension Page1ViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        switch section {
+        case 1, 2, 3:
+            let frame = tableView.frame
+
+            let button = UIButton(frame: CGRect(x: 300, y: 0, width: 100, height: 25))
+            button.tag = section
+            button.setTitle("View all", for: .normal)
+            button.setTitleColor(UIColor.gray, for: .normal)
+
+            let sectionName = UILabel(frame: CGRect(x: 5, y: 0, width: 150, height: 25))
+            sectionName.tag = section
+
+            if section == 1 {
+                sectionName.text = "Latest"
+            }
+
+            if section == 2 {
+                sectionName.text = "Flash Sale"
+            }
+
+            if section == 3 {
+                sectionName.text = "Brands"
+            }
+
+            sectionName.textColor = .black
+            sectionName.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+
+            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
+            headerView.addSubview(button)
+            headerView.addSubview(sectionName)
+            return headerView
+
+        default: return UIView()
+        }
+    }
+
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0: return 70
