@@ -8,9 +8,10 @@
 import UIKit
 import SnapKit
 
-class CategoryTableViewCell: UITableViewCell {
+class CategoryTableViewCell: UITableViewCell, AdapterTVCell {
 
-    var categoryViewModel = CategoryViewModel()
+    weak var coordinator: AppCoordinator?
+    var categoryViewModel: CategoryViewModel?
 
     let categoryCollectionViewCellReuseIdentifier = "categoryCollectionViewCellReuseIdentifier"
 
@@ -30,9 +31,10 @@ class CategoryTableViewCell: UITableViewCell {
                                  forCellWithReuseIdentifier: categoryCollectionViewCellReuseIdentifier)
 
         categoryCollectionView.backgroundColor = .white
-
         setupConstraints()
         print("configure Table Cell done")
+
+
     }
 
     private func setupConstraints() {
@@ -60,22 +62,19 @@ class CategoryTableViewCell: UITableViewCell {
 extension CategoryTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        let array = categoryViewModel.fillModel()
-
-        print("\(array)")
-
-        return array.count
+        let picArray = creatCategory(viewModel: CategoryViewModel())
+        return picArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryCollectionViewCellReuseIdentifier, for: indexPath) as? CategoryCollectionViewCell
         else { return UICollectionViewCell() }
 
-        let array = categoryViewModel.fillModel()
 
-        print(array[indexPath.item])
-        cell.configureCollctionCell(image: UIImage(named: array[indexPath.item]), name: array[indexPath.item])
+        let picArray = creatCategory(viewModel: CategoryViewModel())
+        let name = picArray[indexPath.item]
 
+        cell.configureCollctionCell(image: UIImage(named: name), name: name)
         return cell
     }
 }

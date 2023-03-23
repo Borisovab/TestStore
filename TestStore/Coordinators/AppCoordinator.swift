@@ -65,17 +65,4 @@ class AppCoordinator: Coordinator {
         return array
     }
 
-//    func navBarForPage1() {
-//        print("start navBarForPage1")
-//        let vc1 = Page1ViewController()
-//        let navItem = UINavigationItem(title: "Trade by dara")
-//        let leftButton = UIBarButtonItem(image: UIImage(named: "back"), landscapeImagePhone: nil, style: .plain, target: nil, action: #selector(qqqq))
-//        navItem.leftBarButtonItem = leftButton
-//        vc1.coordinator?.navigationController.navigationBar.setItems([navItem], animated: true)
-//    }
-//    @objc func qqqq() {
-//        print("finished navBarForPage1")
-//    }
-
-
 }

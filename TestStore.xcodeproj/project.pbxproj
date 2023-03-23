@@ -37,6 +37,8 @@
 		0042485829C70F4100096292 /* LoginVC+eyeButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042485729C70F4100096292 /* LoginVC+eyeButtonAction.swift */; };
 		0042485C29C754F400096292 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042485B29C754F400096292 /* String+extension.swift */; };
 		0042485F29C7553500096292 /* UtilityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042485E29C7553500096292 /* UtilityFunction.swift */; };
+		0064464429CC3EF1004D6B6C /* AdapterTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064464329CC3EF1004D6B6C /* AdapterTVCell.swift */; };
+		0064464629CCAD22004D6B6C /* LatestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064464529CCAD22004D6B6C /* LatestCollectionViewCell.swift */; };
 		00786A2729C785240027983A /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2529C785240027983A /* UserData+CoreDataProperties.swift */; };
 		00786A2829C785240027983A /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2629C785240027983A /* UserData+CoreDataClass.swift */; };
 		00786A2B29C875C40027983A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2A29C875C40027983A /* ProfileViewModel.swift */; };
@@ -89,6 +91,8 @@
 		0042485729C70F4100096292 /* LoginVC+eyeButtonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC+eyeButtonAction.swift"; sourceTree = "<group>"; };
 		0042485B29C754F400096292 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		0042485E29C7553500096292 /* UtilityFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunction.swift; sourceTree = "<group>"; };
+		0064464329CC3EF1004D6B6C /* AdapterTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterTVCell.swift; sourceTree = "<group>"; };
+		0064464529CCAD22004D6B6C /* LatestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCollectionViewCell.swift; sourceTree = "<group>"; };
 		00786A2529C785240027983A /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		00786A2629C785240027983A /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		00786A2A29C875C40027983A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 				0042481C29C38B6A00096292 /* AdapterViewController.swift */,
 				0042483929C4434B00096292 /* AdapterTabBarController.swift */,
 				00786A2C29C87E220027983A /* AdapterVCInsideTabBar.swift */,
+				0064464329CC3EF1004D6B6C /* AdapterTVCell.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				00B3C34029CB3A250071F00F /* CategoryCollectionViewCell.swift */,
+				0064464529CCAD22004D6B6C /* LatestCollectionViewCell.swift */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -587,6 +593,7 @@
 				0042481D29C38B6A00096292 /* AdapterViewController.swift in Sources */,
 				0042485429C48F6000096292 /* LoginViewModel.swift in Sources */,
 				00B3C32B29C8B5350071F00F /* ProfileTableViewCell.swift in Sources */,
+				0064464429CC3EF1004D6B6C /* AdapterTVCell.swift in Sources */,
 				00B3C34129CB3A250071F00F /* CategoryCollectionViewCell.swift in Sources */,
 				00B3C33429CB267D0071F00F /* LatestTableViewCell.swift in Sources */,
 				0042484029C4543C00096292 /* LoginVC+Constraints.swift in Sources */,
@@ -615,6 +622,7 @@
 				0042485C29C754F400096292 /* String+extension.swift in Sources */,
 				0042482B29C3B5F200096292 /* LikeViewController.swift in Sources */,
 				00786A2D29C87E220027983A /* AdapterVCInsideTabBar.swift in Sources */,
+				0064464629CCAD22004D6B6C /* LatestCollectionViewCell.swift in Sources */,
 				0042484329C45A7C00096292 /* CoreDataManager.swift in Sources */,
 				0042480329C37F8200096292 /* TestStore.xcdatamodeld in Sources */,
 			);
