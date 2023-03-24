@@ -39,6 +39,7 @@
 		0042485F29C7553500096292 /* UtilityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042485E29C7553500096292 /* UtilityFunction.swift */; };
 		0064464429CC3EF1004D6B6C /* AdapterTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064464329CC3EF1004D6B6C /* AdapterTVCell.swift */; };
 		0064464629CCAD22004D6B6C /* LatestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064464529CCAD22004D6B6C /* LatestCollectionViewCell.swift */; };
+		0064464929CD95D4004D6B6C /* LatestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064464829CD95D4004D6B6C /* LatestModel.swift */; };
 		00786A2729C785240027983A /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2529C785240027983A /* UserData+CoreDataProperties.swift */; };
 		00786A2829C785240027983A /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2629C785240027983A /* UserData+CoreDataClass.swift */; };
 		00786A2B29C875C40027983A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2A29C875C40027983A /* ProfileViewModel.swift */; };
@@ -93,6 +94,7 @@
 		0042485E29C7553500096292 /* UtilityFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunction.swift; sourceTree = "<group>"; };
 		0064464329CC3EF1004D6B6C /* AdapterTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterTVCell.swift; sourceTree = "<group>"; };
 		0064464529CCAD22004D6B6C /* LatestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCollectionViewCell.swift; sourceTree = "<group>"; };
+		0064464829CD95D4004D6B6C /* LatestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestModel.swift; sourceTree = "<group>"; };
 		00786A2529C785240027983A /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		00786A2629C785240027983A /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		00786A2A29C875C40027983A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		0042481729C3877800096292 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0064464729CD95C1004D6B6C /* LatestModel */,
 				00B3C33929CB287C0071F00F /* CategoryModel */,
 			);
 			path = Models;
@@ -395,6 +398,14 @@
 			path = UtilityFunction;
 			sourceTree = "<group>";
 		};
+		0064464729CD95C1004D6B6C /* LatestModel */ = {
+			isa = PBXGroup;
+			children = (
+				0064464829CD95D4004D6B6C /* LatestModel.swift */,
+			);
+			path = LatestModel;
+			sourceTree = "<group>";
+		};
 		00786A2929C875B30027983A /* ProfileViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0064464929CD95D4004D6B6C /* LatestModel.swift in Sources */,
 				00786A2829C785240027983A /* UserData+CoreDataClass.swift in Sources */,
 				00B3C33829CB26DD0071F00F /* BrandsTableViewCell.swift in Sources */,
 				0042481F29C3942D00096292 /* SignInPageVC+Constraints.swift in Sources */,

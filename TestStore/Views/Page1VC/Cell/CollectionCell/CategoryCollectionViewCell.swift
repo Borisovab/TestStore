@@ -48,6 +48,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         self.nameLabel.text = name
 
         setupConstraints()
-        print("configureCollctionCell from Collection Cell")
+        print("print from CategoryCollectionViewCell")
     }
 }
