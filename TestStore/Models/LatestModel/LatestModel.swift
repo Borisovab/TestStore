@@ -6,27 +6,19 @@
 //
 
 import Foundation
-import UIKit
 
-class LatestModel {
+struct LatestModel {
     let category: String
     let goodsName: String
     let price: Int
     let backImage: String
+}
 
-    init(category: String,
-         goodsName: String,
-         price: Int,
-         backImage: String)
-    {
-        self.category = category
-        self.goodsName = goodsName
-        self.price = price
-        self.backImage = backImage
+extension LatestModel {
+    init(from netData: LatestFromJson) {
+        category = netData.category
+        goodsName = netData.name
+        price = netData.price
+        backImage = netData.image
     }
-
-
-
-
-    
 }

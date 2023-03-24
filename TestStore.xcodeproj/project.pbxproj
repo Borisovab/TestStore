@@ -40,6 +40,14 @@
 		0064464429CC3EF1004D6B6C /* AdapterTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064464329CC3EF1004D6B6C /* AdapterTVCell.swift */; };
 		0064464629CCAD22004D6B6C /* LatestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064464529CCAD22004D6B6C /* LatestCollectionViewCell.swift */; };
 		0064464929CD95D4004D6B6C /* LatestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064464829CD95D4004D6B6C /* LatestModel.swift */; };
+		0064464F29CD9809004D6B6C /* LatestFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064464E29CD9809004D6B6C /* LatestFromJson.swift */; };
+		0064465229CD98B9004D6B6C /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064465129CD98B9004D6B6C /* NetworkController.swift */; };
+		0064465429CD98DE004D6B6C /* NetworkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064465329CD98DE004D6B6C /* NetworkerProtocol.swift */; };
+		0064465729CD9BA3004D6B6C /* LatestGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064465629CD9BA3004D6B6C /* LatestGateway.swift */; };
+		0064465A29CDA168004D6B6C /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064465929CDA168004D6B6C /* UIImageView+extension.swift */; };
+		0064465C29CDED53004D6B6C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0064465B29CDED53004D6B6C /* Montserrat-VariableFont_wght.ttf */; };
+		0064465F29CDEE8A004D6B6C /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0064465E29CDEE8A004D6B6C /* Montserrat-Italic-VariableFont_wght.ttf */; };
+		0064466129CDFD58004D6B6C /* FlashSaleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064466029CDFD58004D6B6C /* FlashSaleCollectionViewCell.swift */; };
 		00786A2729C785240027983A /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2529C785240027983A /* UserData+CoreDataProperties.swift */; };
 		00786A2829C785240027983A /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2629C785240027983A /* UserData+CoreDataClass.swift */; };
 		00786A2B29C875C40027983A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00786A2A29C875C40027983A /* ProfileViewModel.swift */; };
@@ -95,6 +103,14 @@
 		0064464329CC3EF1004D6B6C /* AdapterTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterTVCell.swift; sourceTree = "<group>"; };
 		0064464529CCAD22004D6B6C /* LatestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCollectionViewCell.swift; sourceTree = "<group>"; };
 		0064464829CD95D4004D6B6C /* LatestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestModel.swift; sourceTree = "<group>"; };
+		0064464E29CD9809004D6B6C /* LatestFromJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestFromJson.swift; sourceTree = "<group>"; };
+		0064465129CD98B9004D6B6C /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		0064465329CD98DE004D6B6C /* NetworkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkerProtocol.swift; sourceTree = "<group>"; };
+		0064465629CD9BA3004D6B6C /* LatestGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestGateway.swift; sourceTree = "<group>"; };
+		0064465929CDA168004D6B6C /* UIImageView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
+		0064465B29CDED53004D6B6C /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		0064465E29CDEE8A004D6B6C /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		0064466029CDFD58004D6B6C /* FlashSaleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleCollectionViewCell.swift; sourceTree = "<group>"; };
 		00786A2529C785240027983A /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		00786A2629C785240027983A /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		00786A2A29C875C40027983A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -149,6 +165,7 @@
 		004247F729C37F8200096292 /* TestStore */ = {
 			isa = PBXGroup;
 			children = (
+				0064464B29CD97B9004D6B6C /* WorkingWithData */,
 				0042484429C45EBE00096292 /* Entity */,
 				0042484129C459C900096292 /* CoreDataManager */,
 				0042480F29C386F600096292 /* Coordinators */,
@@ -325,6 +342,7 @@
 		0042483529C4426F00096292 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				0064465D29CDEE06004D6B6C /* FontMontserrat */,
 				0042485D29C7551700096292 /* UtilityFunction */,
 				0042485929C754C000096292 /* Extensions */,
 			);
@@ -376,6 +394,7 @@
 		0042485929C754C000096292 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0064465829CDA137004D6B6C /* UIImageView+extension */,
 				0042485A29C754D200096292 /* String+extension */,
 				0042483629C4427F00096292 /* UIColor+extension */,
 			);
@@ -404,6 +423,66 @@
 				0064464829CD95D4004D6B6C /* LatestModel.swift */,
 			);
 			path = LatestModel;
+			sourceTree = "<group>";
+		};
+		0064464B29CD97B9004D6B6C /* WorkingWithData */ = {
+			isa = PBXGroup;
+			children = (
+				0064465529CD9B7E004D6B6C /* GateWay */,
+				0064465029CD98A3004D6B6C /* NetworkController */,
+				0064464C29CD97C9004D6B6C /* JSON */,
+			);
+			path = WorkingWithData;
+			sourceTree = "<group>";
+		};
+		0064464C29CD97C9004D6B6C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				0064464D29CD97DD004D6B6C /* LatestFromJson */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		0064464D29CD97DD004D6B6C /* LatestFromJson */ = {
+			isa = PBXGroup;
+			children = (
+				0064464E29CD9809004D6B6C /* LatestFromJson.swift */,
+			);
+			path = LatestFromJson;
+			sourceTree = "<group>";
+		};
+		0064465029CD98A3004D6B6C /* NetworkController */ = {
+			isa = PBXGroup;
+			children = (
+				0064465129CD98B9004D6B6C /* NetworkController.swift */,
+				0064465329CD98DE004D6B6C /* NetworkerProtocol.swift */,
+			);
+			path = NetworkController;
+			sourceTree = "<group>";
+		};
+		0064465529CD9B7E004D6B6C /* GateWay */ = {
+			isa = PBXGroup;
+			children = (
+				0064465629CD9BA3004D6B6C /* LatestGateway.swift */,
+			);
+			name = GateWay;
+			sourceTree = "<group>";
+		};
+		0064465829CDA137004D6B6C /* UIImageView+extension */ = {
+			isa = PBXGroup;
+			children = (
+				0064465929CDA168004D6B6C /* UIImageView+extension.swift */,
+			);
+			path = "UIImageView+extension";
+			sourceTree = "<group>";
+		};
+		0064465D29CDEE06004D6B6C /* FontMontserrat */ = {
+			isa = PBXGroup;
+			children = (
+				0064465B29CDED53004D6B6C /* Montserrat-VariableFont_wght.ttf */,
+				0064465E29CDEE8A004D6B6C /* Montserrat-Italic-VariableFont_wght.ttf */,
+			);
+			path = FontMontserrat;
 			sourceTree = "<group>";
 		};
 		00786A2929C875B30027983A /* ProfileViewModel */ = {
@@ -455,6 +534,7 @@
 			children = (
 				00B3C34029CB3A250071F00F /* CategoryCollectionViewCell.swift */,
 				0064464529CCAD22004D6B6C /* LatestCollectionViewCell.swift */,
+				0064466029CDFD58004D6B6C /* FlashSaleCollectionViewCell.swift */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -536,6 +616,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0064465F29CDEE8A004D6B6C /* Montserrat-Italic-VariableFont_wght.ttf in Resources */,
+				0064465C29CDED53004D6B6C /* Montserrat-VariableFont_wght.ttf in Resources */,
 				0042480829C37F8300096292 /* LaunchScreen.storyboard in Resources */,
 				0042480529C37F8300096292 /* Assets.xcassets in Resources */,
 				0042480029C37F8200096292 /* Main.storyboard in Resources */,
@@ -595,17 +677,21 @@
 				00786A2829C785240027983A /* UserData+CoreDataClass.swift in Sources */,
 				00B3C33829CB26DD0071F00F /* BrandsTableViewCell.swift in Sources */,
 				0042481F29C3942D00096292 /* SignInPageVC+Constraints.swift in Sources */,
+				0064464F29CD9809004D6B6C /* LatestFromJson.swift in Sources */,
 				004247FD29C37F8200096292 /* SignInPageViewController.swift in Sources */,
 				0042485829C70F4100096292 /* LoginVC+eyeButtonAction.swift in Sources */,
 				0042484D29C48C9100096292 /* SignInPageVC+saveUserToDB.swift in Sources */,
 				0042482829C3B50E00096292 /* ProfileViewController.swift in Sources */,
 				00786A2729C785240027983A /* UserData+CoreDataProperties.swift in Sources */,
+				0064466129CDFD58004D6B6C /* FlashSaleCollectionViewCell.swift in Sources */,
 				0042484B29C4892E00096292 /* SignInViewModel.swift in Sources */,
+				0064465729CD9BA3004D6B6C /* LatestGateway.swift in Sources */,
 				0042485129C48F3800096292 /* LoginVC+logInButtonAction.swift in Sources */,
 				0042481D29C38B6A00096292 /* AdapterViewController.swift in Sources */,
 				0042485429C48F6000096292 /* LoginViewModel.swift in Sources */,
 				00B3C32B29C8B5350071F00F /* ProfileTableViewCell.swift in Sources */,
 				0064464429CC3EF1004D6B6C /* AdapterTVCell.swift in Sources */,
+				0064465429CD98DE004D6B6C /* NetworkerProtocol.swift in Sources */,
 				00B3C34129CB3A250071F00F /* CategoryCollectionViewCell.swift in Sources */,
 				00B3C33429CB267D0071F00F /* LatestTableViewCell.swift in Sources */,
 				0042484029C4543C00096292 /* LoginVC+Constraints.swift in Sources */,
@@ -616,12 +702,14 @@
 				00B3C33629CB26C40071F00F /* FlashSaleTableViewCell.swift in Sources */,
 				00B3C32D29CB1CC10071F00F /* Page1VC+setNavBar.swift in Sources */,
 				00B3C33229CB1F750071F00F /* CategoryTableViewCell.swift in Sources */,
+				0064465A29CDA168004D6B6C /* UIImageView+extension.swift in Sources */,
 				00B3C32629C898620071F00F /* ProfileVC+setNavBar.swift in Sources */,
 				0042482E29C3B66900096292 /* BasketViewController.swift in Sources */,
 				0042482529C3B4CB00096292 /* Page1ViewController.swift in Sources */,
 				0042481429C3874100096292 /* Coordinator.swift in Sources */,
 				0042483A29C4434B00096292 /* AdapterTabBarController.swift in Sources */,
 				00B3C32F29CB1CF80071F00F /* Page1VC+Constraints.swift in Sources */,
+				0064465229CD98B9004D6B6C /* NetworkController.swift in Sources */,
 				00B3C33E29CB29510071F00F /* CategoryViewModel.swift in Sources */,
 				0042483129C3B69600096292 /* ChatViewController.swift in Sources */,
 				0042481229C3872E00096292 /* AppCoordinator.swift in Sources */,
