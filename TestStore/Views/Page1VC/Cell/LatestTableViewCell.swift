@@ -9,10 +9,14 @@ import UIKit
 
 class LatestTableViewCell: UITableViewCell {
 
+    let gateway = LatestGateway(network: NetworkController())
+    var latestModel = [LatestModel]()
+
     let latestCollectionViewCellReuseIdentifier = "latestCollectionViewCellReuseIdentifier"
 
     lazy var latestCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 12
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
@@ -20,7 +24,7 @@ class LatestTableViewCell: UITableViewCell {
     }()
 
 
-    func configureCell() {
+    func configureLatestCVCell() {
         latestCollectionView.dataSource = self
         latestCollectionView.delegate = self
         latestCollectionView.register(LatestCollectionViewCell.self,
@@ -28,9 +32,19 @@ class LatestTableViewCell: UITableViewCell {
 
         latestCollectionView.backgroundColor = .white
         setupConstraints()
-        print("configure Table Cell done")
 
+        gateway.loadPosts { [weak self] post in
+            guard let self = self
+            else {
+                print("error")
+                return
+            }
 
+            self.latestModel = post
+            self.latestCollectionView.reloadData()
+            print("post =====>  \(post)")
+        }
+        print("configure LatestTableViewCell done")
     }
 
     private func setupConstraints() {
@@ -60,19 +74,22 @@ class LatestTableViewCell: UITableViewCell {
 extension LatestTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return 10
+        return latestModel.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: latestCollectionViewCellReuseIdentifier, for: indexPath) as? LatestCollectionViewCell
         else { return UICollectionViewCell() }
 
+        let post = latestModel[indexPath.item]
+        let postImage = latestModel[indexPath.item].backImage
+        let url = URL(string: postImage)
 
+        cell.picImage.showImage(with: url)
 
-//        cell.configureLatestCollectionCell(image: <#T##UIImage?#>,
-//                                           category: <#T##String#>,
-//                                           name: <#T##String#>,
-//                                           cost: <#T##String#>)
+        cell.configureLatestCollectionCell(category: post.category,
+                                           name: post.goodsName,
+                                           cost: String(post.price))
         return cell
     }
 }
@@ -84,10 +101,13 @@ extension LatestTableViewCell: UICollectionViewDelegate {
 extension LatestTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let height = collectionView.bounds.height
-        let whiteSpaces: CGFloat = 0
-        let cellWidth = height / 1 - whiteSpaces
+//        let height = collectionView.bounds.height
+//        let whiteSpaces: CGFloat = 1
+//        let cellWidth = height / 1 - whiteSpaces
 
-        return CGSize(width: cellWidth, height: cellWidth)
+        let cellWidth = (7.46 + 56.59 + 49.85)
+        let cellHeight = (109.31 + 9.14 + 30.54)
+
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 }

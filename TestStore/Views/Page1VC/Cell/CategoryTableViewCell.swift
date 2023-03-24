@@ -24,7 +24,7 @@ class CategoryTableViewCell: UITableViewCell, AdapterTVCell {
     }()
 
 
-    func configureCell() {
+    func configureCategoryCVCell() {
         categoryCollectionView.dataSource = self
         categoryCollectionView.delegate = self
         categoryCollectionView.register(CategoryCollectionViewCell.self,
@@ -32,7 +32,7 @@ class CategoryTableViewCell: UITableViewCell, AdapterTVCell {
 
         categoryCollectionView.backgroundColor = .white
         setupConstraints()
-        print("configure Table Cell done")
+        print("configure CategoryTableViewCell done")
 
 
     }

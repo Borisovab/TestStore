@@ -20,15 +20,17 @@ class LatestCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         label.backgroundColor = #colorLiteral(red: 0.7095205188, green: 0.7134285569, blue: 0.7268471122, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 9, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 7, weight: .medium)
+        label.font = UIFont(name: UIFont.fontNames(forFamilyName: "Montserrat")[0], size: 8)
+//        label.layer.cornerRadius = 30
         return label
     }()
 
     var goodsNameLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 9, weight: .medium)
+        label.font = UIFont(name: UIFont.fontNames(forFamilyName: "Montserrat")[0], size: 8)
         return label
     }()
 
@@ -36,7 +38,7 @@ class LatestCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 9, weight: .medium)
+        label.font = UIFont(name: UIFont.fontNames(forFamilyName: "Montserrat")[0], size: 8)
         return label
     }()
 
@@ -46,13 +48,13 @@ class LatestCollectionViewCell: UICollectionViewCell {
         return button
     }()
 
-    func configureLatestCollectionCell(image: UIImage?, category: String, name: String, cost: String) {
-        self.picImage.image = image
+    func configureLatestCollectionCell(category: String, name: String, cost: String) {
         self.categoryLabel.text = category
         self.goodsNameLabel.text = name
         self.costLabel.text = cost
 
         setupConstraints()
+
         print("print from LatestCollectionViewCell")
     }
 
@@ -83,14 +85,13 @@ class LatestCollectionViewCell: UICollectionViewCell {
         costLabel.snp.makeConstraints { make in
             make.top.equalTo(goodsNameLabel.snp.bottom).offset(17.03)
             make.leading.equalToSuperview().offset(7.37)
-            make.bottom.equalToSuperview().offset(7.06)
+            make.trailing.equalTo(addToBasketButton.snp.leading).offset(-51.61)
             make.height.equalTo(6.45)
-            make.width.equalTo(30.02)
+
         }
 
         addToBasketButton.snp.makeConstraints { make in
-            make.leading.equalTo(costLabel.snp.trailing).offset(51.61)
-            make.width.equalTo(addToBasketButton.snp.height)
+            make.width.height.equalTo(20)
             make.trailing.equalToSuperview().offset(-5)
             make.bottom.equalToSuperview().offset(-5)
         }

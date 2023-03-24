@@ -69,13 +69,15 @@ extension Page1ViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: categoryTableViewCellReuseIdentifier, for: indexPath) as? CategoryTableViewCell
             else { return UITableViewCell() }
 
-            cell.configureCell()
+            cell.configureCategoryCVCell()
 
             return cell
 
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: latestTableViewCellReuseIdentifier, for: indexPath) as? LatestTableViewCell
             else { return UITableViewCell() }
+
+            cell.configureLatestCVCell()
 
             return cell
 
@@ -143,8 +145,8 @@ extension Page1ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0: return 70
-        case 1,3: return 200
-        case 2: return 350
+        case 1,3: return 150
+        case 2: return 450
         default: return 40
         }
     }
