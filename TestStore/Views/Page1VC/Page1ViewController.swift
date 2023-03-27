@@ -7,9 +7,8 @@
 
 import UIKit
 
-class Page1ViewController: UIViewController, AdapterVCInsideTabBar {
-
-    weak var coordinator: AppCoordinator?
+class Page1ViewController: UIViewController {
+    var viewModel: Page1ViewModel?
 
     let categoryTableViewCellReuseIdentifier = "categoryTableViewCellReuseIdentifier"
     let latestTableViewCellReuseIdentifier = "latestTableViewCellReuseIdentifier"

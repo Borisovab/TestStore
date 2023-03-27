@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController, AdapterTabBarControllers {
+class TabBarController: UITabBarController {
 
 //    weak var coordinator: AppCoordinator?
     var coordinator: TabBarCoordinator?
@@ -28,7 +28,7 @@ class TabBarController: UITabBarController, AdapterTabBarControllers {
             print("error setupTabBar")
             return
         }
-//        viewControllers = coordinator.creatVCForTabBar()
+        viewControllers = coordinator.creatVCArray()
     }
 
 

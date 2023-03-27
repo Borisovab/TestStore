@@ -7,9 +7,9 @@
 
 import UIKit
 
-class LikeViewController: UIViewController, AdapterVCInsideTabBar {
+class LikeViewController: UIViewController {
 
-    weak var coordinator: AppCoordinator?
+    var viewModel: LikeViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()

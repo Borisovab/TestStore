@@ -10,8 +10,6 @@ import SnapKit
 
 class ProfileTableViewCell: UITableViewCell {
 
-    weak var coordinator: AppCoordinator?
-
     var imageForCell: UIImageView = {
         let image = UIImageView()
         return image
