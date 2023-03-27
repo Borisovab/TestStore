@@ -28,7 +28,7 @@ class SignInBilder: CreatVCProtocol, ShowByParentProtocol {
         signInVC.viewModel = SignInViewModel()
         signInVC.coordinator = SignInCoordinator()
         signInVC.coordinator?.currentVC = signInVC
-
+        
         signInVC.modalPresentationStyle = .fullScreen
         parentVC.present(signInVC, animated: true)
     }

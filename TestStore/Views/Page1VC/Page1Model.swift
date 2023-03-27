@@ -18,4 +18,10 @@ struct Page1Model {
     struct CategoryPic {
         let pic: String
     }
+
+    struct NavBarData {
+        let imageName: String
+        let avatarImageName: String
+        let location: String
+    }
 }

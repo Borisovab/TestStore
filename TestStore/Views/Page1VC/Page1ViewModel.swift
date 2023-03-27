@@ -10,6 +10,12 @@ import Foundation
 class Page1ViewModel {
 
     let picName: String
+    let navBarData = Page1Model.NavBarData(
+        imageName: "burger",
+        avatarImageName: "avatar",
+        location: "location⋁")
+
+    var selector: Selector?
 
 
     init(name: Page1Model) {
@@ -49,4 +55,6 @@ class Page1ViewModel {
 
         return picArray
     }
+
+
 }
