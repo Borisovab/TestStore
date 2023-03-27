@@ -9,7 +9,6 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
-//    weak var coordinator: AppCoordinator?
     var coordinator: TabBarCoordinator?
     var viewModel: TabBarViewModel?
 

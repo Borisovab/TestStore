@@ -157,7 +157,10 @@ extension ProfileViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 6 {
+
+            
             coordinator?.showSignInVC()
+
             }
         }
 
