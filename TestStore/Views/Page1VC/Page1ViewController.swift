@@ -82,14 +82,21 @@ extension Page1ViewController: UITableViewDataSource {
             return cell
 
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: flashSaleTableViewCellReuseIdentifier, for: indexPath) as? CategoryTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: flashSaleTableViewCellReuseIdentifier, for: indexPath) as? FlashSaleTableViewCell
             else { return UITableViewCell() }
+
+            cell.configureFlashSaleTVCell()
 
             return cell
 
         case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: brandsTableViewCellReuseIdentifier, for: indexPath) as? CategoryTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: brandsTableViewCellReuseIdentifier, for: indexPath) as? BrandsTableViewCell
             else { return UITableViewCell() }
+
+//            let viewModel = BrandsViewModel
+//            cell.configureBrandsTVCell(viewModel: )
+
+
 
             return cell
 
@@ -146,8 +153,10 @@ extension Page1ViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0: return 70
         case 1,3: return 150
-        case 2: return 450
+        case 2: return 220
         default: return 40
         }
+
+
     }
 }

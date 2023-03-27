@@ -9,7 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController, AdapterViewController {
 
-    weak var coordinator: AppCoordinator?
+//    weak var coordinator: AppCoordinator?
+    var coordinator: LoginCoordinator?
     var viewModel: LoginViewModel?
 
     var greetingsLabel: UILabel = {

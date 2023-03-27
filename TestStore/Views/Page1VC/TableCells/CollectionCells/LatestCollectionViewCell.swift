@@ -12,6 +12,7 @@ class LatestCollectionViewCell: UICollectionViewCell {
 
     var picImage: UIImageView = {
         let image = UIImageView()
+        image.contentMode = .scaleAspectFit
         return image
     }()
 
@@ -22,7 +23,6 @@ class LatestCollectionViewCell: UICollectionViewCell {
         label.backgroundColor = #colorLiteral(red: 0.7095205188, green: 0.7134285569, blue: 0.7268471122, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 7, weight: .medium)
         label.font = UIFont(name: UIFont.fontNames(forFamilyName: "Montserrat")[0], size: 8)
-//        label.layer.cornerRadius = 30
         return label
     }()
 
@@ -55,7 +55,7 @@ class LatestCollectionViewCell: UICollectionViewCell {
 
         setupConstraints()
 
-        print("print from LatestCollectionViewCell")
+        print("configure LatestCollectionCell successfully")
     }
 
 

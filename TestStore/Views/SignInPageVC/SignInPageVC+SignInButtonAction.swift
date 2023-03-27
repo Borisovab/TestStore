@@ -13,7 +13,12 @@ extension SignInPageViewController {
     }
 
     @objc func signInButtonAction() {
-        if saveUserData() {
+
+        guard let viewModel = viewModel
+        else { return }
+
+        if viewModel.saveUserData(vc: self, addFirstName: (firstNameTF.text ?? ""), addLastName: (lastNameTF.text ?? ""), addEmail: (emailTF.text ?? "")) {
+
             coordinator?.showTabBar()
         }
     }

@@ -8,9 +8,9 @@
 import UIKit
 import CoreData
 
-class SignInPageViewController: UIViewController, AdapterViewController {
+class SignInPageViewController: UIViewController {
 
-    weak var coordinator: AppCoordinator?
+    var coordinator: SignInCoordinator?
     var viewModel: SignInViewModel?
 
     var fetchResultController = CoreDataManager.instance.fetchResultController(entityName: "UserData", sortName: "firstName")
