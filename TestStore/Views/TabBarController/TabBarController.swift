@@ -9,7 +9,9 @@ import UIKit
 
 class TabBarController: UITabBarController, AdapterTabBarControllers {
 
-    weak var coordinator: AppCoordinator?
+//    weak var coordinator: AppCoordinator?
+    var coordinator: TabBarCoordinator?
+    var viewModel: TabBarViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,7 @@ class TabBarController: UITabBarController, AdapterTabBarControllers {
             print("error setupTabBar")
             return
         }
-        viewControllers = coordinator.creatVCForTabBar()
+//        viewControllers = coordinator.creatVCForTabBar()
     }
 
 

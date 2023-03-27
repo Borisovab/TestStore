@@ -140,7 +140,7 @@ extension ProfileViewController: UITableViewDelegate {
                 return
 
             }
-            coordinator.logoutToSignInVC()
+//            coordinator.logoutToSignInVC()
         }
     }
 }

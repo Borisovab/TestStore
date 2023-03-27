@@ -13,6 +13,12 @@ extension SignInPageViewController {
     }
 
     @objc func logButtonAction() {
-        coordinator?.showLoginVC()
+        guard let coordinator = coordinator
+        else {
+            print("coordinator in logButtonAction = nil")
+            return
+        }
+        coordinator.showLoginVC()
     }
 }
+

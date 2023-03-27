@@ -101,10 +101,6 @@ extension LatestTableViewCell: UICollectionViewDelegate {
 extension LatestTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-//        let height = collectionView.bounds.height
-//        let whiteSpaces: CGFloat = 1
-//        let cellWidth = height / 1 - whiteSpaces
-
         let cellWidth = (7.46 + 56.59 + 49.85)
         let cellHeight = (109.31 + 9.14 + 30.54)
 
