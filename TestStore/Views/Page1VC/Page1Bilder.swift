@@ -13,7 +13,7 @@ protocol CreatViewControllerProtocol {
 
 class Page1Bilder: CreatViewControllerProtocol {
 
-    let tabPicModel = TabPicModel()
+    let tabPicModel = Page1Model()
 
     func creatVC() -> UINavigationController {
         let vc = Page1ViewController()

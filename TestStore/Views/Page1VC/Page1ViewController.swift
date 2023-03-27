@@ -8,6 +8,7 @@
 import UIKit
 
 class Page1ViewController: UIViewController {
+
     var viewModel: Page1ViewModel?
 
     let categoryTableViewCellReuseIdentifier = "categoryTableViewCellReuseIdentifier"
@@ -68,7 +69,13 @@ extension Page1ViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: categoryTableViewCellReuseIdentifier, for: indexPath) as? CategoryTableViewCell
             else { return UITableViewCell() }
 
-            cell.configureCategoryCVCell()
+            guard let viewModel = viewModel
+            else {
+                print("Error configureCategoryCVCell / viewModel = nil")
+                return UITableViewCell()
+            }
+
+            cell.configureCategoryCVCell(viewModel: viewModel)
 
             return cell
 
@@ -92,10 +99,13 @@ extension Page1ViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: brandsTableViewCellReuseIdentifier, for: indexPath) as? BrandsTableViewCell
             else { return UITableViewCell() }
 
-//            let viewModel = BrandsViewModel
-//            cell.configureBrandsTVCell(viewModel: )
+            guard let viewModel = viewModel
+            else {
+                print("Error configureBrandsTVCell / viewModel = nil")
+                return UITableViewCell()
+            }
 
-
+            cell.configureBrandsTVCell(viewModel: viewModel)
 
             return cell
 
