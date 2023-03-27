@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, AdapterViewController {
+class LoginViewController: UIViewController {
 
 //    weak var coordinator: AppCoordinator?
     var coordinator: LoginCoordinator?

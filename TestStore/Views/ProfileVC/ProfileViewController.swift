@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, AdapterVCInsideTabBar {
+class ProfileViewController: UIViewController {
 
-    weak var coordinator: AppCoordinator?
+    var coordinator: ProfileCoordinator?
     var viewModel: ProfileViewModel?
 
     let profileTableViewCellReuseIdentifier = "profileTableViewCellReuseIdentifier"
@@ -20,15 +20,6 @@ class ProfileViewController: UIViewController, AdapterVCInsideTabBar {
         image.image = UIImage(named: "avatar")
         return image
     }()
-
-//    var changePhotoLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "Change photo"
-//        label.textAlignment = .center
-//        label.textColor = #colorLiteral(red: 0.5764705539, green: 0.5764707327, blue: 0.5807756782, alpha: 1)
-//        label.font = UIFont.systemFont(ofSize: 11, weight: .medium)
-//        return label
-//    }()
 
 
     var changePhotoButton: UIButton = {
@@ -69,7 +60,6 @@ class ProfileViewController: UIViewController, AdapterVCInsideTabBar {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setNavBar()
         setupConstraints()
 
     }
@@ -96,28 +86,62 @@ extension ProfileViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: profileTableViewCellReuseIdentifier, for: indexPath) as? ProfileTableViewCell
         else { return UITableViewCell() }
 
+        guard let viewModel = viewModel
+        else {
+            print("error viewModel = nil")
+            return UITableViewCell()
+        }
+        let model1 = viewModel.dataForCase1
+        let model2 = viewModel.dataForCase2
+        let model3 = viewModel.dataForCase3
+        let model4 = viewModel.dataForCase4
+        let model5 = viewModel.dataForCase5
+        let model6 = viewModel.dataForCase6
+        let model7 = viewModel.dataForCase7
+
         switch indexPath.section {
         case 0:
-            cell.configureCell(image: UIImage(named: "trade")!, name: "Trade store", rightL: "〉")
+            cell.configureCell(image: UIImage(named: model1.pic.rawValue)!,
+                               name: model1.name.rawValue,
+                               rightL: model1.rightLabel?.rawValue)
             return cell
+
         case 1:
-            cell.configureCell(image: UIImage(named: "trade")!, name: "Payment method", rightL: "〉")
+            cell.configureCell(image: UIImage(named: model2.pic.rawValue)!,
+                               name: model2.name.rawValue,
+                               rightL: model2.rightLabel?.rawValue)
             return cell
+
         case 2:
-            cell.configureCell(image: UIImage(named: "trade")!, name: "Balance", rightL: "$ 1593")
+            cell.configureCell(image: UIImage(named: model3.pic.rawValue)!,
+                               name: model3.name.rawValue,
+                               rightL: model3.rightLabel?.rawValue)
             return cell
+
         case 3:
-            cell.configureCell(image: UIImage(named: "trade")!, name: "Trade history", rightL: "〉")
+            cell.configureCell(image: UIImage(named: model4.pic.rawValue)!,
+                               name: model4.name.rawValue,
+                               rightL: model4.rightLabel?.rawValue)
             return cell
+
         case 4:
-            cell.configureCell(image: UIImage(named: "restore")!, name: "Restore Puchase", rightL: "〉")
+            cell.configureCell(image: UIImage(named: model5.pic.rawValue)!,
+                               name: model5.name.rawValue,
+                               rightL: model5.rightLabel?.rawValue)
             return cell
+
         case 5:
-            cell.configureCell(image: UIImage(named: "help")!, name: "Help", rightL: nil)
+            cell.configureCell(image: UIImage(named: model6.pic.rawValue)!,
+                               name: model6.name.rawValue,
+                               rightL: model6.rightLabel?.rawValue)
             return cell
+
         case 6:
-            cell.configureCell(image: UIImage(named: "logout")!, name: "Log out", rightL: nil)
+            cell.configureCell(image: UIImage(named: model7.pic.rawValue)!,
+                               name: model7.name.rawValue,
+                               rightL: model7.rightLabel?.rawValue)
             return cell
+
         default: return UITableViewCell()
 
         }
@@ -133,14 +157,8 @@ extension ProfileViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 6 {
-            print("tap Logout")
-            guard let coordinator = coordinator
-            else {
-                print("error Logout")
-                return
-
+            coordinator?.showSignInVC()
             }
-//            coordinator.logoutToSignInVC()
         }
-    }
+
 }

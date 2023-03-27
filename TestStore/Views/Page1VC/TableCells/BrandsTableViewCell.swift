@@ -9,8 +9,6 @@ import UIKit
 
 class BrandsTableViewCell: UITableViewCell {
 
-    var viewModel: BrandsViewModel?
-
     let brandsCollectionViewCellReuseIdentifier = "brandsCollectionViewCellReuseIdentifier"
 
     lazy var brandsCollectionView: UICollectionView = {
@@ -23,8 +21,7 @@ class BrandsTableViewCell: UITableViewCell {
     }()
 
 
-    func configureBrandsTVCell(viewModel: BrandsViewModel) {
-        self.viewModel = viewModel
+    func configureBrandsTVCell() {
 
         brandsCollectionView.dataSource = self
         brandsCollectionView.delegate = self

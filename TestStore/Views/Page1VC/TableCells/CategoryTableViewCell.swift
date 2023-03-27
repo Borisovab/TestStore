@@ -8,9 +8,8 @@
 import UIKit
 import SnapKit
 
-class CategoryTableViewCell: UITableViewCell, AdapterTVCell {
+class CategoryTableViewCell: UITableViewCell {
 
-    weak var coordinator: AppCoordinator?
     var categoryViewModel: CategoryViewModel?
 
     let categoryCollectionViewCellReuseIdentifier = "categoryCollectionViewCellReuseIdentifier"
@@ -62,8 +61,8 @@ class CategoryTableViewCell: UITableViewCell, AdapterTVCell {
 extension CategoryTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        let picArray = creatCategory(viewModel: CategoryViewModel())
-        return picArray.count
+
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,10 +70,7 @@ extension CategoryTableViewCell: UICollectionViewDataSource {
         else { return UICollectionViewCell() }
 
 
-        let picArray = creatCategory(viewModel: CategoryViewModel())
-        let name = picArray[indexPath.item]
 
-        cell.configureCollctionCell(image: UIImage(named: name), name: name)
         return cell
     }
 }
