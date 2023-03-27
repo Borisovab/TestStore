@@ -37,8 +37,8 @@ struct ProfileModel {
         }
 
         enum RightLabel: String {
-        case errow = "〉"
-        case cost = "$ 1593"
+            case errow = "〉"
+            case cost = "$ 1593"
         }
     }
 

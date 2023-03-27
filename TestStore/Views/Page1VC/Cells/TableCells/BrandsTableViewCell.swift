@@ -9,6 +9,8 @@ import UIKit
 
 class BrandsTableViewCell: UITableViewCell {
 
+    var viewModel: Page1ViewModel?
+
     let brandsCollectionViewCellReuseIdentifier = "brandsCollectionViewCellReuseIdentifier"
 
     lazy var brandsCollectionView: UICollectionView = {
@@ -21,7 +23,7 @@ class BrandsTableViewCell: UITableViewCell {
     }()
 
 
-    func configureBrandsTVCell() {
+    func configureBrandsTVCell(viewModel: Page1ViewModel) {
 
         brandsCollectionView.dataSource = self
         brandsCollectionView.delegate = self
@@ -31,7 +33,7 @@ class BrandsTableViewCell: UITableViewCell {
         brandsCollectionView.backgroundColor = .white
         setupConstraints()
         print("configure BrandsTableViewCell done")
-
+        self.viewModel = viewModel
 
     }
 
@@ -62,25 +64,24 @@ class BrandsTableViewCell: UITableViewCell {
 extension BrandsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-//        guard let picArray = brandsPicArray
-//        else {
-//            print("picArray = nil")
-//            return 0
-//        }
+        guard let viewModel = viewModel
+        else {
+            print("Error viewModel in BrandsTableViewCell = nil")
+            return 0
+        }
 
-        return 1
+        return viewModel.creatPhotoArray().count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: brandsCollectionViewCellReuseIdentifier, for: indexPath) as? BrandsCollectionViewCell
         else { return UICollectionViewCell() }
 
-//        guard let picArray = brandsPicArray
-//        else {
-//            return UICollectionViewCell()
-//        }
+        guard let viewModel = viewModel
+        else { return UICollectionViewCell() }
 
-//        let picName b(named: picName))
+        let photo = viewModel.creatPhotoArray()[indexPath.item]
+        cell.configureBrandsCollectionViewCell(image: UIImage(named: photo))
 
         return cell
     }

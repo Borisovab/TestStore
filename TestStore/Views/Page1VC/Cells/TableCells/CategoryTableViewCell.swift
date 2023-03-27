@@ -10,7 +10,7 @@ import SnapKit
 
 class CategoryTableViewCell: UITableViewCell {
 
-    var categoryViewModel: CategoryViewModel?
+    var viewModel: Page1ViewModel?
 
     let categoryCollectionViewCellReuseIdentifier = "categoryCollectionViewCellReuseIdentifier"
 
@@ -23,7 +23,7 @@ class CategoryTableViewCell: UITableViewCell {
     }()
 
 
-    func configureCategoryCVCell() {
+    func configureCategoryCVCell(viewModel: Page1ViewModel) {
         categoryCollectionView.dataSource = self
         categoryCollectionView.delegate = self
         categoryCollectionView.register(CategoryCollectionViewCell.self,
@@ -33,6 +33,7 @@ class CategoryTableViewCell: UITableViewCell {
         setupConstraints()
         print("configure CategoryTableViewCell done")
 
+        self.viewModel = viewModel
 
     }
 
@@ -61,16 +62,21 @@ class CategoryTableViewCell: UITableViewCell {
 extension CategoryTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
+        guard let viewModel = viewModel
+        else { return 0 }
 
-        return 1
+        return viewModel.creatPicArray().count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryCollectionViewCellReuseIdentifier, for: indexPath) as? CategoryCollectionViewCell
         else { return UICollectionViewCell() }
 
+        guard let viewModel = viewModel
+        else { return UICollectionViewCell() }
 
-
+        let pic = viewModel.creatPicArray()[indexPath.item]
+        cell.configureCollctionCell(image: UIImage(named: pic), name: pic)
         return cell
     }
 }
