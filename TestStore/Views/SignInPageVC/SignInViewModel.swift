@@ -12,6 +12,7 @@ import CoreData
 class SignInViewModel {
     var user: UserData?
     var flag = false
+//    var isLoggedIn = false
 
     func saveUserData(vc: UIViewController, addFirstName: String, addLastName: String, addEmail: String) -> Bool {
         if addFirstName.isEmpty || addLastName.isEmpty || addEmail.isEmpty {

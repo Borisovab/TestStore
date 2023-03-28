@@ -160,6 +160,8 @@ extension ProfileViewController: UITableViewDelegate {
 
             
             coordinator?.showSignInVC()
+//            dismiss(animated: true)
+
 
             }
         }

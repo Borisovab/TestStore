@@ -9,7 +9,6 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-//    weak var coordinator: AppCoordinator?
     var coordinator: LoginCoordinator?
     var viewModel: LoginViewModel?
 

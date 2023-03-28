@@ -20,4 +20,25 @@ class LoginCoordinator {
 
         TabBarBilder().creatTBC(parentVC: currentVC)
     }
+
+
+
+
+
+//    func dismissCurrent(flaf: Bool) {
+//        let vc = SignInPageViewController()
+//        vc.coordinator = SignInCoordinator()
+//        vc.viewModel = SignInViewModel()
+//        vc.coordinator?.isLoggedIn = flaf
+//        currentVC?.dismiss(animated: false)
+//    }
+
+
+//    func dismissLogin(flaf: Bool) {
+//        SignInBilder().getFlag(flag: flaf)
+//
+//        currentVC?.dismiss(animated: false)
+//    }
+
+
 }
