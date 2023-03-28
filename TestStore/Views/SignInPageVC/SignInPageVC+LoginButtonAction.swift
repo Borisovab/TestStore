@@ -18,6 +18,7 @@ extension SignInPageViewController {
             print("coordinator in logButtonAction = nil")
             return
         }
+
         coordinator.showLoginVC()
     }
 }

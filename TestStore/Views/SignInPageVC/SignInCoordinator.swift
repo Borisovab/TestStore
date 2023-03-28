@@ -10,6 +10,7 @@ import UIKit
 class SignInCoordinator {
 
     weak var currentVC: UIViewController?
+    var isLoggedIn: Bool = false
 
     func showTabBar() {
         guard let currentVC = currentVC
@@ -31,4 +32,18 @@ class SignInCoordinator {
         LoginBilder().showVC(parentVC: currentVC)
 
     }
+
+//    func showTabBarAfterLoginVC() {
+//        if isLoggedIn {
+//            guard let currentVC = currentVC
+//            else {
+//                print("currentVC in SignInCoordinator = nil")
+//                return
+//            }
+//
+//            TabBarBilder().creatTBC(parentVC: currentVC)
+//        }
+//
+//    }
+
 }

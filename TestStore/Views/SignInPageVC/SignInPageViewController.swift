@@ -141,8 +141,6 @@ class SignInPageViewController: UIViewController {
         signInButtonPressed()
         logButtonPressed()
 
-
-
         let fetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
 
         do {
@@ -156,9 +154,6 @@ class SignInPageViewController: UIViewController {
             print(error.localizedDescription)
         }
 
-
-
-
         //MARK: временный блок для очистки памяти
 //                do {
 //                    let results = try CoreDataManager.instance.context.fetch(fetchResult)
@@ -169,10 +164,22 @@ class SignInPageViewController: UIViewController {
 //                    print(error.localizedDescription)
 //                }
 //                CoreDataManager.instance.saveContext()
-
-
     }
 
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        coordinator?.showTabBarAfterLoginVC()
+//    }
+
+
+
+
+
+
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        coordinator?.showTabBarAfterLoginVC()
+//    }
 
 
 
