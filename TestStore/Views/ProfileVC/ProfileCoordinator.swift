@@ -11,10 +11,7 @@ class ProfileCoordinator {
     weak var currentVC: UIViewController?
 
     func showSignInVC() {
-        guard let currentVC = currentVC else {
-            print("currentVC in ProfileCoordinator = nil")
-            return
-        }
+        guard let currentVC = currentVC else { return }
         SignInBilder().showVC(parentVC: currentVC)
     }
 }

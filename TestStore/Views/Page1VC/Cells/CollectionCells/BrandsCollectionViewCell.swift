@@ -19,7 +19,6 @@ class BrandsCollectionViewCell: UICollectionViewCell {
         self.picImage.image = image
 
         setupConstraints()
-        print("configure BrandsCollectionViewCell successfully")
     }
 
 

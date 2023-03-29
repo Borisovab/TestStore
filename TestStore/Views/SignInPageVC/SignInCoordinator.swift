@@ -14,20 +14,14 @@ class SignInCoordinator {
 
     func showTabBar() {
         guard let currentVC = currentVC
-        else {
-            print("currentVC in SignInCoordinator = nil")
-            return
-        }
+        else { return }
 
         TabBarBilder().creatTBC(parentVC: currentVC)
     }
 
     func showLoginVC() {
         guard let currentVC = currentVC
-        else {
-            print("currentVC in SignInCoordinator = nil")
-            return
-        }
+        else { return }
 
         LoginBilder().showVC(parentVC: currentVC)
     }

@@ -45,7 +45,7 @@ class Page1ViewModel {
 
     func creatPicArray() -> [String] {
         let pic1 = Page1Model.CategoryPic(pic: "Phones")
-        let pic2 = Page1Model.CategoryPic(pic: "Headphones")
+        let pic2 = Page1Model.CategoryPic(pic: "headphones")
         let pic3 = Page1Model.CategoryPic(pic: "Games")
         let pic4 = Page1Model.CategoryPic(pic: "Cars")
         let pic5 = Page1Model.CategoryPic(pic: "Furniture")

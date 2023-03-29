@@ -13,10 +13,7 @@ class LoginCoordinator {
     var isLoggedIn: Bool = false
 
     func showTabBar() {
-        guard let currentVC = currentVC else {
-            print("currentVC in LoginCoordinator = nil")
-            return
-        }
+        guard let currentVC = currentVC else { return }
 
         TabBarBilder().creatTBC(parentVC: currentVC)
     }

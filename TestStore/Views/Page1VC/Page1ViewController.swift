@@ -62,7 +62,6 @@ class Page1ViewController: UIViewController {
     }
 
     @objc private func getFlag() {
-        print("print getFlag")
         self.latestModel = viewModel?.latestDataArray ?? [LatestModel]()
         self.flashModel = viewModel?.flashDataArray ?? [FlashModel]()
         self.page1TableView.reloadData()

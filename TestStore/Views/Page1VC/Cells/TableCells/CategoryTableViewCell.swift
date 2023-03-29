@@ -31,7 +31,6 @@ class CategoryTableViewCell: UITableViewCell {
 
         categoryCollectionView.backgroundColor = .white
         setupConstraints()
-        print("configure CategoryTableViewCell done")
 
         self.viewModel = viewModel
     }

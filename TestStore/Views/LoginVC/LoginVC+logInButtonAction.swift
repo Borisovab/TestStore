@@ -13,7 +13,6 @@ extension LoginViewController {
     }
 
     @objc func logInButtonAction() {
-        print("tap")
         guard let viewModel = viewModel
         else { return }
 

@@ -22,10 +22,8 @@ class TabBarController: UITabBarController {
     }
 
     private func setupTabBar() {
-        guard let viewModel = viewModel else {
-            print("error setupTabBar")
-            return
-        }
+        guard let viewModel = viewModel else { return }
+        
         viewControllers = viewModel.creatVCArray()
     }
 
