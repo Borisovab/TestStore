@@ -10,12 +10,12 @@ import SnapKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
 
-    var picImage: UIImageView = {
+    private var picImage: UIImageView = {
         let image = UIImageView()
         return image
     }()
 
-    var nameLabel: UILabel = {
+    private var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 0.7095205188, green: 0.7134285569, blue: 0.7268471122, alpha: 1)
@@ -23,6 +23,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
+    func configureCollctionCell(image: UIImage?, name: String) {
+        self.picImage.image = image
+        self.nameLabel.text = name
+
+        setupConstraints()
+    }
 
     private func setupConstraints() {
         [picImage, nameLabel].forEach{ contentView.addSubview($0) }
@@ -41,13 +47,5 @@ class CategoryCollectionViewCell: UICollectionViewCell {
             make.bottom.equalToSuperview().offset(5)
 
         }
-    }
-
-    func configureCollctionCell(image: UIImage?, name: String) {
-        self.picImage.image = image
-        self.nameLabel.text = name
-
-        setupConstraints()
-        print("print from CategoryCollectionViewCell")
     }
 }

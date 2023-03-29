@@ -15,9 +15,6 @@ class ProfileCoordinator {
             print("currentVC in ProfileCoordinator = nil")
             return
         }
-
-
         SignInBilder().showVC(parentVC: currentVC)
-
     }
 }

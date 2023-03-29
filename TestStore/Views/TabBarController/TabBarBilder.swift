@@ -17,8 +17,6 @@ class TabBarBilder: TabBarControllerProtocol {
     func creatTBC(parentVC: UIViewController) {
 
         tabBar.viewModel = TabBarViewModel()
-        tabBar.coordinator = TabBarCoordinator()
-
         tabBar.modalPresentationStyle = .fullScreen
         parentVC.present(tabBar, animated: true)
     }

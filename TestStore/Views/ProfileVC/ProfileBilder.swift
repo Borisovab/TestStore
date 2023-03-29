@@ -14,13 +14,10 @@ class ProfileBilder: CreatViewControllerProtocol {
     func creatVC() -> UINavigationController {
         let vc = ProfileViewController()
         vc.viewModel = ProfileViewModel(model: profileModel)
-
-
         vc.coordinator = ProfileCoordinator()
         vc.coordinator?.currentVC = vc
 
         vc.tabBarItem.image = UIImage(named: profileModel.picBarItem)
-
 
         let navController = UINavigationController(rootViewController: vc)
         return navController

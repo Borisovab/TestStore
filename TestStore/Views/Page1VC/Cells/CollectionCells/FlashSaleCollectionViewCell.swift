@@ -10,7 +10,7 @@ import SnapKit
 
 class FlashSaleCollectionViewCell: UICollectionViewCell {
 
-    var picAva: UIImageView = {
+    private var picAva: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "pic")
         image.contentMode = .scaleAspectFit
@@ -24,7 +24,7 @@ class FlashSaleCollectionViewCell: UICollectionViewCell {
     }()
 
 
-    var categoryLabel: UILabel = {
+    private var categoryLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -34,7 +34,7 @@ class FlashSaleCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    var goodsNameLabel: UILabel = {
+    private var goodsNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -43,7 +43,7 @@ class FlashSaleCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    var costLabel: UILabel = {
+    private var costLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -51,7 +51,7 @@ class FlashSaleCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    var discountLabel: UILabel = {
+    private var discountLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -60,13 +60,13 @@ class FlashSaleCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    var addToBasketButton: UIButton = {
+    private var addToBasketButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "plus"), for: .normal)
         return button
     }()
 
-    var likeButton: UIButton = {
+    private var likeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "roundedHeart"), for: .normal)
         return button
@@ -79,8 +79,8 @@ class FlashSaleCollectionViewCell: UICollectionViewCell {
         self.discountLabel.text = discount
 
         setupConstraints()
-        print("configure FlashSaleCollectionViewCell successfully")
     }
+
 
     private func setupConstraints() {
         [picImage,
@@ -145,9 +145,5 @@ class FlashSaleCollectionViewCell: UICollectionViewCell {
             make.trailing.equalToSuperview().offset(-4)
             make.width.height.equalTo(35)
         }
-
-
     }
-
-
 }

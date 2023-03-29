@@ -4,7 +4,6 @@
 //
 //  Created by Александр Борисов on 24.03.2023.
 //
-
 import Foundation
 
 class FlashSaleGateway {
@@ -35,29 +34,4 @@ class FlashSaleGateway {
             }
         }
     }
-
-
-    func showImage(with url: URL?) -> Data {
-
-        var myData = Data()
-        guard let url = url else {
-            return Data()
-        }
-        DispatchQueue.main.async {
-
-            URLSession.shared.dataTask(with: url) { data, _, _ in
-                guard let data = data else {
-                    return
-                }
-                myData = data
-
-            }.resume()
-
-        }
-
-        return myData
-    }
-
-
-
 }

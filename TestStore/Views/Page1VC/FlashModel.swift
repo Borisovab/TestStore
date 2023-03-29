@@ -24,3 +24,4 @@ extension FlashModel {
         backImage = netData.image
     }
 }
+

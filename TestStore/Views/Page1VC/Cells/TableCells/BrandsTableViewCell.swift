@@ -11,9 +11,9 @@ class BrandsTableViewCell: UITableViewCell {
 
     var viewModel: Page1ViewModel?
 
-    let brandsCollectionViewCellReuseIdentifier = "brandsCollectionViewCellReuseIdentifier"
+    private let brandsCollectionViewCellReuseIdentifier = "brandsCollectionViewCellReuseIdentifier"
 
-    lazy var brandsCollectionView: UICollectionView = {
+    private lazy var brandsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 12
         layout.scrollDirection = .horizontal
@@ -24,6 +24,7 @@ class BrandsTableViewCell: UITableViewCell {
 
 
     func configureBrandsTVCell(viewModel: Page1ViewModel) {
+        self.viewModel = viewModel
 
         brandsCollectionView.dataSource = self
         brandsCollectionView.delegate = self
@@ -32,9 +33,6 @@ class BrandsTableViewCell: UITableViewCell {
 
         brandsCollectionView.backgroundColor = .white
         setupConstraints()
-        print("configure BrandsTableViewCell done")
-        self.viewModel = viewModel
-
     }
 
 
@@ -65,10 +63,7 @@ extension BrandsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
         guard let viewModel = viewModel
-        else {
-            print("Error viewModel in BrandsTableViewCell = nil")
-            return 0
-        }
+        else { return 0 }
 
         return viewModel.creatPhotoArray().count
     }
@@ -88,12 +83,10 @@ extension BrandsTableViewCell: UICollectionViewDataSource {
 }
 
 extension BrandsTableViewCell: UICollectionViewDelegate {
-
 }
 
 extension BrandsTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
         let cellWidth = (114)
         let cellHeight = (149)
 

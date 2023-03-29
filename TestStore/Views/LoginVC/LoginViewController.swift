@@ -63,9 +63,4 @@ class LoginViewController: UIViewController {
         
         logInButtonPressed()
     }
-
-
-    
-
-
 }

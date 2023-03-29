@@ -41,7 +41,4 @@ struct ProfileModel {
             case cost = "$ 1593"
         }
     }
-
-
-
 }

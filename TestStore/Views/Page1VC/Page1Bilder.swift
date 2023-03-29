@@ -16,6 +16,7 @@ class Page1Bilder: CreatViewControllerProtocol {
     let tabPicModel = Page1Model()
 
     func creatVC() -> UINavigationController {
+
         let vc = Page1ViewController()
         vc.viewModel = Page1ViewModel(name: tabPicModel)
 
@@ -36,9 +37,7 @@ class Page1Bilder: CreatViewControllerProtocol {
         vc.navigationItem.titleView = customTitle
 
         let navController = UINavigationController(rootViewController: vc)
-
         
         return navController
     }
-
 }

@@ -9,7 +9,6 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
-    var coordinator: TabBarCoordinator?
     var viewModel: TabBarViewModel?
 
     override func viewDidLoad() {
@@ -23,13 +22,12 @@ class TabBarController: UITabBarController {
     }
 
     private func setupTabBar() {
-        guard let coordinator = coordinator else {
+        guard let viewModel = viewModel else {
             print("error setupTabBar")
             return
         }
-        viewControllers = coordinator.creatVCArray()
+        viewControllers = viewModel.creatVCArray()
     }
-
 
     private func setTabBarAppearence() {
         let positionOnX: CGFloat = 10

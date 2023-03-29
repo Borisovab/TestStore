@@ -9,7 +9,7 @@ import UIKit
 
 class BrandsCollectionViewCell: UICollectionViewCell {
 
-    var picImage: UIImageView = {
+    private var picImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
         return image
@@ -21,7 +21,6 @@ class BrandsCollectionViewCell: UICollectionViewCell {
         setupConstraints()
         print("configure BrandsCollectionViewCell successfully")
     }
-
 
 
     private func setupConstraints() {

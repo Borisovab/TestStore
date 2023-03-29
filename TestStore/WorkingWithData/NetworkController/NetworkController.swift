@@ -22,7 +22,4 @@ class NetworkController: NetworkerProtocol {
     private func parse<Model: Decodable>(data: Data) -> Model? {
         return try? JSONDecoder().decode(Model.self, from: data)
     }
-
-
-
 }
