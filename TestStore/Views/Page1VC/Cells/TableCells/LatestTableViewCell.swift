@@ -9,12 +9,11 @@ import UIKit
 
 class LatestTableViewCell: UITableViewCell {
 
-    let gateway = LatestGateway(network: NetworkController())
     var latestModel = [LatestModel]()
 
-    let latestCollectionViewCellReuseIdentifier = "latestCollectionViewCellReuseIdentifier"
+    private let latestCollectionViewCellReuseIdentifier = "latestCollectionViewCellReuseIdentifier"
 
-    lazy var latestCollectionView: UICollectionView = {
+    private lazy var latestCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 12
         layout.scrollDirection = .horizontal
@@ -24,28 +23,20 @@ class LatestTableViewCell: UITableViewCell {
     }()
 
 
-    func configureLatestCVCell() {
+    func configureLatestCVCell(viewModel: [LatestModel]) {
+        self.latestModel = viewModel
+
         latestCollectionView.dataSource = self
         latestCollectionView.delegate = self
         latestCollectionView.register(LatestCollectionViewCell.self,
                                  forCellWithReuseIdentifier: latestCollectionViewCellReuseIdentifier)
 
         latestCollectionView.backgroundColor = .white
+
         setupConstraints()
-
-        gateway.loadPosts { [weak self] post in
-            guard let self = self
-            else {
-                print("error")
-                return
-            }
-
-            self.latestModel = post
-            self.latestCollectionView.reloadData()
-            print("post =====>  \(post)")
-        }
-        print("configure LatestTableViewCell done")
+        latestCollectionView.reloadData()
     }
+
 
     private func setupConstraints() {
         [latestCollectionView].forEach{ contentView.addSubview($0)}
@@ -90,12 +81,12 @@ extension LatestTableViewCell: UICollectionViewDataSource {
         cell.configureLatestCollectionCell(category: post.category,
                                            name: post.goodsName,
                                            cost: String(post.price))
+
         return cell
     }
 }
 
 extension LatestTableViewCell: UICollectionViewDelegate {
-
 }
 
 extension LatestTableViewCell: UICollectionViewDelegateFlowLayout {

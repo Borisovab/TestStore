@@ -10,18 +10,18 @@ import SnapKit
 
 class ProfileTableViewCell: UITableViewCell {
 
-    var imageForCell: UIImageView = {
+    private var imageForCell: UIImageView = {
         let image = UIImageView()
         return image
     }()
 
-    var nameLabel: UILabel = {
+    private var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         return label
     }()
 
-    var rightLabel: UILabel = {
+    private var rightLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .right
         return label
@@ -52,9 +52,6 @@ class ProfileTableViewCell: UITableViewCell {
         setupConstraints()
     }
 
-
-
-
     private func setupConstraints() {
         [imageForCell, nameLabel, rightLabel].forEach{ contentView.addSubview($0)}
 
@@ -81,5 +78,4 @@ class ProfileTableViewCell: UITableViewCell {
             make.leading.equalTo(nameLabel.snp.trailing)
         }
     }
-
 }

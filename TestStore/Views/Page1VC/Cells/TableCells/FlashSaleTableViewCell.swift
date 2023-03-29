@@ -9,12 +9,11 @@ import UIKit
 
 class FlashSaleTableViewCell: UITableViewCell {
 
-    let gateway = FlashSaleGateway(network: NetworkController())
     var flashModel = [FlashModel]()
 
-    let flashSaleCollectionViewCellReuseIdentifier = "flashSaleCollectionViewCellReuseIdentifier"
+    private let flashSaleCollectionViewCellReuseIdentifier = "flashSaleCollectionViewCellReuseIdentifier"
 
-    lazy var flashSaleCollectionView: UICollectionView = {
+    private lazy var flashSaleCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 9
         layout.scrollDirection = .horizontal
@@ -23,25 +22,15 @@ class FlashSaleTableViewCell: UITableViewCell {
         return collectionView
     }()
 
-    func configureFlashSaleTVCell() {
+    func configureFlashSaleTVCell(viewModel: [FlashModel]) {
+        self.flashModel = viewModel
+
         flashSaleCollectionView.dataSource = self
         flashSaleCollectionView.delegate = self
         flashSaleCollectionView.register(FlashSaleCollectionViewCell.self,
                                          forCellWithReuseIdentifier: flashSaleCollectionViewCellReuseIdentifier)
         setupConstraints()
-
-        gateway.loadPosts { [weak self] post in
-            guard let self = self
-            else {
-                print("error")
-                return
-            }
-
-            self.flashModel = post
-            self.flashSaleCollectionView.reloadData()
-            print("post =====>  \(post)")
-        }
-        print("configure FlashSaleTableViewCell done")
+        flashSaleCollectionView.reloadData()
     }
 
     private func setupConstraints() {
@@ -87,12 +76,12 @@ extension FlashSaleTableViewCell: UICollectionViewDataSource {
                                                   name: post.goodsName,
                                                   prise: String(post.price),
                                                   discount: String(post.discount))
+
         return cell
     }
 }
 
 extension FlashSaleTableViewCell: UICollectionViewDelegate {
-
 }
 
 extension FlashSaleTableViewCell: UICollectionViewDelegateFlowLayout {

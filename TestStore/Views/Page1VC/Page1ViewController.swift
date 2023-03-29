@@ -10,11 +10,13 @@ import UIKit
 class Page1ViewController: UIViewController {
 
     var viewModel: Page1ViewModel?
+    var latestModel = [LatestModel]()
+    var flashModel = [FlashModel]()
 
-    let categoryTableViewCellReuseIdentifier = "categoryTableViewCellReuseIdentifier"
-    let latestTableViewCellReuseIdentifier = "latestTableViewCellReuseIdentifier"
-    let flashSaleTableViewCellReuseIdentifier = "flashSaleTableViewCellReuseIdentifier"
-    let brandsTableViewCellReuseIdentifier = "brandsTableViewCellReuseIdentifier"
+    private let categoryTableViewCellReuseIdentifier = "categoryTableViewCellReuseIdentifier"
+    private let latestTableViewCellReuseIdentifier = "latestTableViewCellReuseIdentifier"
+    private let flashSaleTableViewCellReuseIdentifier = "flashSaleTableViewCellReuseIdentifier"
+    private let brandsTableViewCellReuseIdentifier = "brandsTableViewCellReuseIdentifier"
 
     lazy var page1SearchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -39,15 +41,32 @@ class Page1ViewController: UIViewController {
         return tableView
     }()
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9860665202, green: 0.9761391282, blue: 1, alpha: 1)
         setupConstraints()
-
+        viewModel?.loadPosts()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getFlagNotification()
+    }
+
+
+    private func getFlagNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(getFlag),
+                                               name: NSNotification.Name("flagFromGroup.notifyToPage1VC"),
+                                               object: nil)
+    }
+
+    @objc private func getFlag() {
+        print("print getFlag")
+        self.latestModel = viewModel?.latestDataArray ?? [LatestModel]()
+        self.flashModel = viewModel?.flashDataArray ?? [FlashModel]()
+        self.page1TableView.reloadData()
+    }
 }
 
 
@@ -71,29 +90,23 @@ extension Page1ViewController: UITableViewDataSource {
             else { return UITableViewCell() }
 
             guard let viewModel = viewModel
-            else {
-                print("Error configureCategoryCVCell / viewModel = nil")
-                return UITableViewCell()
-            }
+            else { return UITableViewCell() }
 
             cell.configureCategoryCVCell(viewModel: viewModel)
-
             return cell
 
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: latestTableViewCellReuseIdentifier, for: indexPath) as? LatestTableViewCell
             else { return UITableViewCell() }
 
-            cell.configureLatestCVCell()
-
+            cell.configureLatestCVCell(viewModel: latestModel)
             return cell
 
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: flashSaleTableViewCellReuseIdentifier, for: indexPath) as? FlashSaleTableViewCell
             else { return UITableViewCell() }
 
-            cell.configureFlashSaleTVCell()
-
+            cell.configureFlashSaleTVCell(viewModel: flashModel)
             return cell
 
         case 3:
@@ -101,21 +114,14 @@ extension Page1ViewController: UITableViewDataSource {
             else { return UITableViewCell() }
 
             guard let viewModel = viewModel
-            else {
-                print("Error configureBrandsTVCell / viewModel = nil")
-                return UITableViewCell()
-            }
+            else { return UITableViewCell() }
 
             cell.configureBrandsTVCell(viewModel: viewModel)
-
             return cell
 
         default: return UITableViewCell()
         }
-
     }
-
-
 }
 
 extension Page1ViewController: UITableViewDelegate {
@@ -163,10 +169,8 @@ extension Page1ViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0: return 70
         case 1,3: return 150
-        case 2: return 220
+        case 2: return 250
         default: return 40
         }
-
-
     }
 }

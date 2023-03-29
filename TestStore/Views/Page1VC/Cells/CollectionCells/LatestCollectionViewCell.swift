@@ -16,7 +16,7 @@ class LatestCollectionViewCell: UICollectionViewCell {
         return image
     }()
 
-    var categoryLabel: UILabel = {
+    private var categoryLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -26,7 +26,7 @@ class LatestCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    var goodsNameLabel: UILabel = {
+    private var goodsNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -34,7 +34,7 @@ class LatestCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    var costLabel: UILabel = {
+    private var costLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -42,7 +42,7 @@ class LatestCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    var addToBasketButton: UIButton = {
+    private var addToBasketButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "plus"), for: .normal)
         return button
@@ -54,8 +54,6 @@ class LatestCollectionViewCell: UICollectionViewCell {
         self.costLabel.text = cost
 
         setupConstraints()
-
-        print("configure LatestCollectionCell successfully")
     }
 
 
@@ -95,7 +93,5 @@ class LatestCollectionViewCell: UICollectionViewCell {
             make.trailing.equalToSuperview().offset(-5)
             make.bottom.equalToSuperview().offset(-5)
         }
-
     }
-    
 }

@@ -40,11 +40,7 @@ class ProfileViewModel {
                                              rightLabel: nil)
 
 
-    init(
-        model: ProfileModel
-    ) {
+    init(model: ProfileModel) {
         self.picBarItem = model.picBarItem
     }
-
-
 }

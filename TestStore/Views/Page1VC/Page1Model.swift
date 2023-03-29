@@ -24,4 +24,5 @@ struct Page1Model {
         let avatarImageName: String
         let location: String
     }
+
 }

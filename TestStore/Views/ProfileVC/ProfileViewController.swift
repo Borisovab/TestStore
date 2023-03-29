@@ -21,7 +21,6 @@ class ProfileViewController: UIViewController {
         return image
     }()
 
-
     var changePhotoButton: UIButton = {
         let button = UIButton()
         button.setTitle("Change photo", for: .normal)
@@ -48,7 +47,6 @@ class ProfileViewController: UIViewController {
         return button
     }()
 
-
     lazy var profileTableView: UITableView = {
         let tableVew = UITableView(frame: .zero, style: .plain)
         tableVew.dataSource = self
@@ -57,18 +55,17 @@ class ProfileViewController: UIViewController {
         return tableVew
     }()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupConstraints()
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         avatar.layer.cornerRadius = avatar.frame.size.width / 2
     }
-
 }
 
 
@@ -87,10 +84,8 @@ extension ProfileViewController: UITableViewDataSource {
         else { return UITableViewCell() }
 
         guard let viewModel = viewModel
-        else {
-            print("error viewModel = nil")
-            return UITableViewCell()
-        }
+        else { return UITableViewCell() }
+
         let model1 = viewModel.dataForCase1
         let model2 = viewModel.dataForCase2
         let model3 = viewModel.dataForCase3
@@ -146,9 +141,8 @@ extension ProfileViewController: UITableViewDataSource {
 
         }
     }
-
-
 }
+
 
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -157,13 +151,7 @@ extension ProfileViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 6 {
-
-            
             coordinator?.showSignInVC()
-//            dismiss(animated: true)
-
-
             }
         }
-
 }

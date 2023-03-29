@@ -32,11 +32,4 @@ class SignInBilder: CreatVCProtocol, ShowByParentProtocol {
         signInVC.modalPresentationStyle = .fullScreen
         parentVC.present(signInVC, animated: true)
     }
-
-//    func getFlag(flag: Bool) {
-//        signInVC.coordinator = SignInCoordinator()
-//        signInVC.viewModel = SignInViewModel()
-//        signInVC.coordinator?.isLoggedIn = flag
-//    }
-
 }

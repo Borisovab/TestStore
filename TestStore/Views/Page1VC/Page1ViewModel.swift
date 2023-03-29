@@ -9,18 +9,24 @@ import Foundation
 
 class Page1ViewModel {
 
-    let picName: String
-    let navBarData = Page1Model.NavBarData(
-        imageName: "burger",
-        avatarImageName: "avatar",
-        location: "location⋁")
+    var picName: String
 
-    var selector: Selector?
+    var navBarData = Page1Model.NavBarData(imageName: "burger",
+                                           avatarImageName: "avatar",
+                                           location: "location⋁")
+
+    var latestDataArray = [LatestModel]()
+    var flashDataArray = [FlashModel]()
+
+    let latesgateway = LatestGateway(network: NetworkController())
+    let flashSalegateway = FlashSaleGateway(network: NetworkController())
+    let group = DispatchGroup()
 
 
     init(name: Page1Model) {
         self.picName = name.pic
     }
+
 
     func creatPhotoArray() -> [String] {
         let brandPhoto1 = Page1Model.BrandsPhoto(photo: "Brand1")
@@ -35,6 +41,7 @@ class Page1ViewModel {
 
         return array
     }
+
 
     func creatPicArray() -> [String] {
         let pic1 = Page1Model.CategoryPic(pic: "Phones")
@@ -56,5 +63,26 @@ class Page1ViewModel {
         return picArray
     }
 
+//MARK: - DispatchGroup method
 
+    func loadPosts() {
+        group.enter()
+        latesgateway.loadPosts { [weak self] post in
+
+            self?.latestDataArray = post
+            self?.group.leave()
+        }
+
+        group.enter()
+        flashSalegateway.loadPosts { [weak self] post in
+
+            self?.flashDataArray = post
+            self?.group.leave()
+        }
+
+        group.notify(queue: .main) {
+
+            NotificationCenter.default.post(name: NSNotification.Name("flagFromGroup.notifyToPage1VC"), object: nil)
+        }
+    }
 }

@@ -12,9 +12,9 @@ class CategoryTableViewCell: UITableViewCell {
 
     var viewModel: Page1ViewModel?
 
-    let categoryCollectionViewCellReuseIdentifier = "categoryCollectionViewCellReuseIdentifier"
+    private let categoryCollectionViewCellReuseIdentifier = "categoryCollectionViewCellReuseIdentifier"
 
-    lazy var categoryCollectionView: UICollectionView = {
+    private lazy var categoryCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero,
@@ -34,7 +34,6 @@ class CategoryTableViewCell: UITableViewCell {
         print("configure CategoryTableViewCell done")
 
         self.viewModel = viewModel
-
     }
 
     private func setupConstraints() {
@@ -59,6 +58,7 @@ class CategoryTableViewCell: UITableViewCell {
     }
 }
 
+
 extension CategoryTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
@@ -82,7 +82,6 @@ extension CategoryTableViewCell: UICollectionViewDataSource {
 }
 
 extension CategoryTableViewCell: UICollectionViewDelegate {
-
 }
 
 extension CategoryTableViewCell: UICollectionViewDelegateFlowLayout {

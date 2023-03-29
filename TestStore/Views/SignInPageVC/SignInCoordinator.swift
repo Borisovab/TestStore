@@ -30,20 +30,5 @@ class SignInCoordinator {
         }
 
         LoginBilder().showVC(parentVC: currentVC)
-
     }
-
-//    func showTabBarAfterLoginVC() {
-//        if isLoggedIn {
-//            guard let currentVC = currentVC
-//            else {
-//                print("currentVC in SignInCoordinator = nil")
-//                return
-//            }
-//
-//            TabBarBilder().creatTBC(parentVC: currentVC)
-//        }
-//
-//    }
-
 }
