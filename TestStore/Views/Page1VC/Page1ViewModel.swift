@@ -15,8 +15,8 @@ class Page1ViewModel {
                                            avatarImageName: "avatar",
                                            location: "location⋁")
 
-    var latestDataArray = [LatestModel]()
-    var flashDataArray = [FlashModel]()
+    var latestDataArray = [GoodsModel]()
+    var flashDataArray = [GoodsModel]()
 
     let latesgateway = LatestGateway(network: NetworkController())
     let flashSalegateway = FlashSaleGateway(network: NetworkController())

@@ -29,9 +29,8 @@ class Page1Bilder: CreatViewControllerProtocol {
         let burgerButton = vc.creatCustomButton(
             imageName: imageName ?? "")
 
-        let customTitle = vc.creatCustomView(
-            location: location ?? "",
-            avatarImage: avatarImage ?? "")
+        let customTitle = vc.creatCustomView(location: location ?? "",
+                                             avatarImage: avatarImage ?? "")
 
         vc.navigationItem.leftBarButtonItem = burgerButton
         vc.navigationItem.titleView = customTitle
