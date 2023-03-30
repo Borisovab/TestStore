@@ -49,6 +49,7 @@ class ProfileViewController: UIViewController {
 
     lazy var profileTableView: UITableView = {
         let tableVew = UITableView(frame: .zero, style: .plain)
+        tableVew.separatorStyle = .none
         tableVew.dataSource = self
         tableVew.delegate = self
         tableVew.register(ProfileTableViewCell.self, forCellReuseIdentifier: profileTableViewCellReuseIdentifier)
@@ -60,12 +61,17 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupConstraints()
+        setNavBar()
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         avatar.layer.cornerRadius = avatar.frame.size.width / 2
+
+
     }
+
 }
 
 
