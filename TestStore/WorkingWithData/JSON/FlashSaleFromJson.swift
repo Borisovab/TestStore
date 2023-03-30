@@ -30,3 +30,4 @@ struct FlashSaleFromJson: Decodable {
         case image = "image_url"
     }
 }
+

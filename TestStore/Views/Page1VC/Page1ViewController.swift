@@ -10,8 +10,9 @@ import UIKit
 class Page1ViewController: UIViewController {
 
     var viewModel: Page1ViewModel?
-    var latestModel = [LatestModel]()
-    var flashModel = [FlashModel]()
+
+    var latestDataArray = [GoodsModel]()
+    var flashDataArray = [GoodsModel]()
 
     private let categoryTableViewCellReuseIdentifier = "categoryTableViewCellReuseIdentifier"
     private let latestTableViewCellReuseIdentifier = "latestTableViewCellReuseIdentifier"
@@ -62,8 +63,8 @@ class Page1ViewController: UIViewController {
     }
 
     @objc private func getFlag() {
-        self.latestModel = viewModel?.latestDataArray ?? [LatestModel]()
-        self.flashModel = viewModel?.flashDataArray ?? [FlashModel]()
+        self.latestDataArray = viewModel?.latestDataArray ?? [GoodsModel]()
+        self.flashDataArray = viewModel?.flashDataArray ?? [GoodsModel]()
         self.page1TableView.reloadData()
     }
 }
@@ -98,14 +99,14 @@ extension Page1ViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: latestTableViewCellReuseIdentifier, for: indexPath) as? LatestTableViewCell
             else { return UITableViewCell() }
 
-            cell.configureLatestCVCell(viewModel: latestModel)
+            cell.configureLatestCVCell(viewModel: latestDataArray)
             return cell
 
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: flashSaleTableViewCellReuseIdentifier, for: indexPath) as? FlashSaleTableViewCell
             else { return UITableViewCell() }
 
-            cell.configureFlashSaleTVCell(viewModel: flashModel)
+            cell.configureFlashSaleTVCell(viewModel: flashDataArray)
             return cell
 
         case 3:

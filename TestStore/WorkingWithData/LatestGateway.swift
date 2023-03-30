@@ -14,7 +14,7 @@ class LatestGateway {
         self.network = network
     }
 
-    func loadPosts(completion: @escaping ([LatestModel]) -> Void) {
+    func loadPosts(completion: @escaping ([GoodsModel]) -> Void) {
         let url = URL(string: "https://run.mocky.io/v3/cc0071a1-f06e-48fa-9e90-b1c2a61eaca7")
         guard let url = url else {
             return completion([])
@@ -29,9 +29,10 @@ class LatestGateway {
                     return
                 }
 
-                let viewData = model.latest.map{ LatestModel(from: $0) }
+                let viewData = model.latest.map{ GoodsModel(from: $0) }
                 completion(viewData)
             }
         }
     }
 }
+

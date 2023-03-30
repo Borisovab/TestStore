@@ -14,7 +14,7 @@ class FlashSaleGateway {
         self.network = network
     }
 
-    func loadPosts(completion: @escaping ([FlashModel]) -> Void) {
+    func loadPosts(completion: @escaping ([GoodsModel]) -> Void) {
         let url = URL(string: "https://run.mocky.io/v3/a9ceeb6e-416d-4352-bde6-2203416576ac")
         guard let url = url else {
             return completion([])
@@ -29,7 +29,7 @@ class FlashSaleGateway {
                     return
                 }
 
-                let viewData = model.flashSale.map{ FlashModel(from: $0) }
+                let viewData = model.flashSale.map{ GoodsModel(from: $0) }
                 completion(viewData)
             }
         }

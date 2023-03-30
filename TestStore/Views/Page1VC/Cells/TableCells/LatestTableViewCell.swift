@@ -9,7 +9,7 @@ import UIKit
 
 class LatestTableViewCell: UITableViewCell {
 
-    var latestModel = [LatestModel]()
+    var latestDataArray = [GoodsModel]()
 
     private let latestCollectionViewCellReuseIdentifier = "latestCollectionViewCellReuseIdentifier"
 
@@ -23,8 +23,8 @@ class LatestTableViewCell: UITableViewCell {
     }()
 
 
-    func configureLatestCVCell(viewModel: [LatestModel]) {
-        self.latestModel = viewModel
+    func configureLatestCVCell(viewModel: [GoodsModel]) {
+        self.latestDataArray = viewModel
 
         latestCollectionView.dataSource = self
         latestCollectionView.delegate = self
@@ -65,21 +65,21 @@ class LatestTableViewCell: UITableViewCell {
 extension LatestTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return latestModel.count
+        return latestDataArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: latestCollectionViewCellReuseIdentifier, for: indexPath) as? LatestCollectionViewCell
         else { return UICollectionViewCell() }
 
-        let post = latestModel[indexPath.item]
-        let postImage = latestModel[indexPath.item].backImage
+        let post = latestDataArray[indexPath.item]
+        let postImage = latestDataArray[indexPath.item].backImage
         let url = URL(string: postImage)
 
         cell.picImage.showImage(with: url)
 
         cell.configureLatestCollectionCell(category: post.category,
-                                           name: post.goodsName,
+                                           name: post.name,
                                            cost: String(post.price))
 
         return cell

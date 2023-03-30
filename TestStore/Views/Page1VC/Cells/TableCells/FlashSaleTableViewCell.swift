@@ -9,7 +9,7 @@ import UIKit
 
 class FlashSaleTableViewCell: UITableViewCell {
 
-    var flashModel = [FlashModel]()
+    var flashDataArray = [GoodsModel]()
 
     private let flashSaleCollectionViewCellReuseIdentifier = "flashSaleCollectionViewCellReuseIdentifier"
 
@@ -22,8 +22,8 @@ class FlashSaleTableViewCell: UITableViewCell {
         return collectionView
     }()
 
-    func configureFlashSaleTVCell(viewModel: [FlashModel]) {
-        self.flashModel = viewModel
+    func configureFlashSaleTVCell(viewModel: [GoodsModel]) {
+        self.flashDataArray = viewModel
 
         flashSaleCollectionView.dataSource = self
         flashSaleCollectionView.delegate = self
@@ -59,23 +59,23 @@ class FlashSaleTableViewCell: UITableViewCell {
 extension FlashSaleTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return flashModel.count
+        return flashDataArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: flashSaleCollectionViewCellReuseIdentifier, for: indexPath) as? FlashSaleCollectionViewCell
         else { return UICollectionViewCell() }
 
-        let post = flashModel[indexPath.item]
-        let postImage = flashModel[indexPath.item].backImage
+        let post = flashDataArray[indexPath.item]
+        let postImage = flashDataArray[indexPath.item].backImage
         let url = URL(string: postImage)
 
         cell.picImage.showImage(with: url)
 
         cell.configureFlashSaleCollectionViewCell(category: post.category,
-                                                  name: post.goodsName,
+                                                  name: post.name,
                                                   prise: String(post.price),
-                                                  discount: String(post.discount))
+                                                  discount: String(post.discount ?? 0))
 
         return cell
     }
