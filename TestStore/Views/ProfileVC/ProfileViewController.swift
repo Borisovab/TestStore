@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class ProfileViewController: UIViewController {
 
@@ -62,18 +63,18 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         setNavBar()
-        
+        changePhotoButtonPressed()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         avatar.layer.cornerRadius = avatar.frame.size.width / 2
 
-
     }
-
 }
 
+
+//MARK: - UITableViewDataSource
 
 extension ProfileViewController: UITableViewDataSource {
 
@@ -149,6 +150,8 @@ extension ProfileViewController: UITableViewDataSource {
     }
 }
 
+
+//MARK: - UITableViewDelegate
 
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
