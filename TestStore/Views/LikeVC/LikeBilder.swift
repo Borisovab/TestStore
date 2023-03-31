@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LikeBilder: CreatViewControllerProtocol {
+class LikeBilder: CreatNavigationControllerProtocol {
     let likeModel = LikeModel()
 
     func creatVC() -> UINavigationController {

@@ -10,6 +10,7 @@ import UIKit
 class Page1ViewController: UIViewController {
 
     var viewModel: Page1ViewModel?
+    var coordinator: Page1Coordinator?
 
     var latestDataArray = [GoodsModel]()
     var flashDataArray = [GoodsModel]()
@@ -106,7 +107,7 @@ extension Page1ViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: flashSaleTableViewCellReuseIdentifier, for: indexPath) as? FlashSaleTableViewCell
             else { return UITableViewCell() }
 
-            cell.configureFlashSaleTVCell(viewModel: flashDataArray)
+            cell.configureFlashSaleTVCell(viewModel: flashDataArray, vc: self)
             return cell
 
         case 3:

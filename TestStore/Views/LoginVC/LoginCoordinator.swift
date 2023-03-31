@@ -15,6 +15,6 @@ class LoginCoordinator {
     func showTabBar() {
         guard let currentVC = currentVC else { return }
 
-        TabBarBilder().creatTBC(parentVC: currentVC)
+        TabBarBilder().creatVCByParent(parentVC: currentVC)
     }
 }
