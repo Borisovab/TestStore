@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BasketBilder: CreatViewControllerProtocol {
+class BasketBilder: CreatNavigationControllerProtocol {
     let basketModel = BasketModel()
 
     func creatVC() -> UINavigationController {

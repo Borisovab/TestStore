@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileBilder: CreatViewControllerProtocol {
+class ProfileBilder: CreatNavigationControllerProtocol {
 
     let profileModel = ProfileModel()
 

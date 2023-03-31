@@ -8,8 +8,11 @@
 import UIKit
 
 class FlashSaleTableViewCell: UITableViewCell {
+    var coordinator = Page1Coordinator()
 
     var flashDataArray = [GoodsModel]()
+
+    var viewController: UIViewController?
 
     private let flashSaleCollectionViewCellReuseIdentifier = "flashSaleCollectionViewCellReuseIdentifier"
 
@@ -22,7 +25,8 @@ class FlashSaleTableViewCell: UITableViewCell {
         return collectionView
     }()
 
-    func configureFlashSaleTVCell(viewModel: [GoodsModel]) {
+    func configureFlashSaleTVCell(viewModel: [GoodsModel], vc: UIViewController) {
+        self.viewController = vc
         self.flashDataArray = viewModel
 
         flashSaleCollectionView.dataSource = self
@@ -82,6 +86,26 @@ extension FlashSaleTableViewCell: UICollectionViewDataSource {
 }
 
 extension FlashSaleTableViewCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        guard let viewController = viewController
+        else {
+            print("Error")
+            return
+        }
+
+        let selectedProduct = flashDataArray[indexPath.item]
+
+        coordinator.showPage2VC(viewController: viewController, data: selectedProduct, selector: #selector(back))
+
+
+    }
+
+    @objc func back() {
+        print("back")
+        viewController?.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension FlashSaleTableViewCell: UICollectionViewDelegateFlowLayout {

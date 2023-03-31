@@ -16,7 +16,7 @@ class SignInCoordinator {
         guard let currentVC = currentVC
         else { return }
 
-        TabBarBilder().creatTBC(parentVC: currentVC)
+        TabBarBilder().creatVCByParent(parentVC: currentVC)
     }
 
     func showLoginVC() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatBilder: CreatViewControllerProtocol {
+class ChatBilder: CreatNavigationControllerProtocol {
     let chatModel = ChatModel()
 
     func creatVC() -> UINavigationController {

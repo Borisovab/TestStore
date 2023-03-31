@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol TabBarControllerProtocol {
-    func creatTBC(parentVC: UIViewController)
+protocol CreatViewControllerByParentVCProtocol {
+    func creatVCByParent(parentVC: UIViewController)
 }
 
-class TabBarBilder: TabBarControllerProtocol {
+class TabBarBilder: CreatViewControllerByParentVCProtocol {
     let tabBar = TabBarController()
 
-    func creatTBC(parentVC: UIViewController) {
+    func creatVCByParent(parentVC: UIViewController) {
 
         tabBar.viewModel = TabBarViewModel()
         tabBar.modalPresentationStyle = .fullScreen

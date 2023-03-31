@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol CreatViewControllerProtocol {
+protocol CreatNavigationControllerProtocol {
     func creatVC() -> UINavigationController
 }
 
-class Page1Bilder: CreatViewControllerProtocol {
+class Page1Bilder: CreatNavigationControllerProtocol {
 
     let tabPicModel = Page1Model()
 
@@ -19,6 +19,7 @@ class Page1Bilder: CreatViewControllerProtocol {
 
         let vc = Page1ViewController()
         vc.viewModel = Page1ViewModel(name: tabPicModel)
+        vc.coordinator?.currentVC = vc
 
         vc.tabBarItem.image = UIImage(named: tabPicModel.pic)
 
