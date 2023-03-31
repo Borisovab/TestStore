@@ -14,4 +14,10 @@ class ProfileCoordinator {
         guard let currentVC = currentVC else { return }
         SignInBilder().showVC(parentVC: currentVC)
     }
+
+    func configImagePicker() -> UIImagePickerController {
+        let vc = ImagePickerBilder().creatImagePicker()
+        return vc
+    }
 }
+
