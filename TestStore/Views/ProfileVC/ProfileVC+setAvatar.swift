@@ -15,13 +15,20 @@ extension ProfileViewController {
 
 
     @objc func openGallery() {
-        print("Tap")
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let image = UIImagePickerController()
-            image.allowsEditing = true
-            image.delegate = self
-            self.present(image, animated: true)
-        }
+//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+//            let image = UIImagePickerController()
+//            image.allowsEditing = true
+//            image.delegate = self
+//            self.present(image, animated: true)
+//        }
+
+        guard let coordinator = coordinator
+        else { return }
+
+        let vc = coordinator.configImagePicker()
+        vc.delegate = self
+        present(vc, animated: true)
+
     }
 }
 
@@ -36,7 +43,6 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         if let editingImage = data[convertInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
             self.avatar.image = editingImage
         }
-
         picker.dismiss(animated: true)
     }
 

@@ -65,6 +65,7 @@ class ProfileViewController: UIViewController {
         setNavBar()
         changePhotoButtonPressed()
     }
+    
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
