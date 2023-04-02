@@ -10,8 +10,8 @@ import UIKit
 class Page1Coordinator {
     weak var currentVC: UIViewController?
 
-    func showPage2VC(viewController: UIViewController, data: GoodsModel, selector: Selector) {
-        Page2Bilder().creatNavControllerByParentVC(parent: viewController, data: data, selector: selector)
+    func showPage2VC(viewController: UIViewController, data: GoodsModel) {
+        Page2Bilder().creatNavControllerByParentVC(parent: viewController, data: data)
     }
 
 

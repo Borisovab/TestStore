@@ -96,14 +96,9 @@ extension FlashSaleTableViewCell: UICollectionViewDelegate {
 
         let selectedProduct = flashDataArray[indexPath.item]
 
-        coordinator.showPage2VC(viewController: viewController, data: selectedProduct, selector: #selector(back))
+        coordinator.showPage2VC(viewController: viewController, data: selectedProduct)
 
 
-    }
-
-    @objc func back() {
-        print("back")
-        viewController?.navigationController?.popViewController(animated: true)
     }
     
 }
