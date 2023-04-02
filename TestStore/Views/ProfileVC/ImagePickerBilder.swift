@@ -8,17 +8,21 @@
 import UIKit
 
 protocol CreateImagePickerProtocol {
-    func creatImagePicker() -> UIImagePickerController
+    func creatImagePicker(parent: UIViewController)
 }
 
 
 class ImagePickerBilder: CreateImagePickerProtocol {
-    func creatImagePicker() -> UIImagePickerController {
-        let vc = UIImagePickerController()
-        vc.sourceType = .photoLibrary
-        vc.allowsEditing = true
+    func creatImagePicker(parent: UIViewController) {
 
-        return vc
+        let ipc = UIImagePickerController()
+        ipc.sourceType = .photoLibrary
+        ipc.allowsEditing = true
+        ipc.delegate = parent as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+
+        parent.present(ipc, animated: true)
+
+
     }
 
 

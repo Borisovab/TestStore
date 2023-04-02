@@ -15,9 +15,8 @@ class ProfileCoordinator {
         SignInBilder().showVC(parentVC: currentVC)
     }
 
-    func configImagePicker() -> UIImagePickerController {
-        let vc = ImagePickerBilder().creatImagePicker()
-        return vc
+    func showImagePickerController(viewController: UIViewController) {
+        ImagePickerBilder().creatImagePicker(parent: viewController)
     }
 }
 

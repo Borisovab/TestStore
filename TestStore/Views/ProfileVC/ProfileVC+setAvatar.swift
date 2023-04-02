@@ -13,22 +13,11 @@ extension ProfileViewController {
         self.changePhotoButton.addTarget(self, action: #selector(openGallery), for: .touchUpInside)
     }
 
-
     @objc func openGallery() {
-//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-//            let image = UIImagePickerController()
-//            image.allowsEditing = true
-//            image.delegate = self
-//            self.present(image, animated: true)
-//        }
-
         guard let coordinator = coordinator
         else { return }
 
-        let vc = coordinator.configImagePicker()
-        vc.delegate = self
-        present(vc, animated: true)
-
+        coordinator.showImagePickerController(viewController: self)
     }
 }
 
